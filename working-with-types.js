@@ -106,3 +106,17 @@ console.log(!!"false");
 
 console.log(!!"0");
 //true
+//******************************** part 2
+
+var sample = "Hello, Codeup";
+console.log(sample.length);
+console.log(sample.toUpperCase(""));
+sample += " Students!";
+console.log(sample);
+sample = sample.replace(" Students!", " Class!");
+console.log(sample);
+console.log(sample.indexOf("C"));
+//lowercase c doesn't exist so it's -1 but "C" is 7.
+var cIndex = sample.indexOf("C");
+console.log(sample.substr(cIndex, (sample.indexOf("p") + 1) - cIndex));
+

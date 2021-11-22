@@ -1,7 +1,7 @@
 console.log('1' + 2); //12
 console.log(typeof '1' + 2); //string and a number
 console.log(6 % 4); //remainder 2
-console.log('3 + 4 is ' + (3 + 4)); //I am unsure
+console.log('3 + 4 is ' + (3 + 4)); //add parenthesis around numbers. !string
 // how could you make this produce the correct output?
 console.log(0 < 0); //false
 console.log('false' == false); //true

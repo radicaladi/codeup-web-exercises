@@ -192,7 +192,7 @@ if (canHaveADrink && isAtBar) { // true or false
     console.log("Sorry buddy, no brew for u");
 }
 
-//******************************** function exercise
+//******************************** function exercises
 
 // Its definition has two parameters:
 // a boolean which informs if it's cloudy and a number which tells us how many planes are scheduled to fly.
@@ -208,4 +208,40 @@ function todayIsAGoodDay(iscloudy, planesScheduled) {
 
 }
 
+//THE PRACTICE FOR GETTING RETURN OUT OF FUNCTION.
+
 todayIsAGoodDay(false, 10);
+
+function getFullName (firstName, lastName) {
+    return firstName + " " + lastName;
+}
+
+let fullName = getFullName("Shawn", "Michaels");
+console.log(fullName);
+
+//THE FUNCTION PRACTICE FOR ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, AND REMAINDER
+
+function sum(x, y) {
+    return x + y;
+}
+console.log(sum (3,4));
+
+function sumAgain(x, y) {
+    return x - y;
+}
+console.log(sumAgain (3,4));
+
+function product(x, y) {
+    return x * y;
+}
+console.log(product (3,4));
+
+function difference(x, y) {
+    return x / y;
+}
+console.log(difference (12,4));
+
+function remainder(x, y) {
+    return x % y;
+}
+console.log(remainder (14,5));

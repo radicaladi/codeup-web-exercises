@@ -120,3 +120,74 @@ console.log(sample.indexOf("C"));
 var cIndex = sample.indexOf("C");
 console.log(sample.substr(cIndex, (sample.indexOf("p") + 1) - cIndex));
 
+//******************************** part 3
+
+//littleMermaid 3 days, littleBear 5 days, theHercules 1 day || $3 per day. How much will you pay?
+let daysMermaid = 3;
+let daysBear = 5;
+let daysHercules = 1;
+let costOfMovies = ((daysMermaid * 3) + (daysBear * 3) + (daysHercules * 3));
+console.log(costOfMovies);
+
+//Google  400/hr, Amazon 380/hr, Facebook 350/hr. 10hrs Facebook, 6hrs Google, 4hrs Amazon.
+// How much will you get paid for the week?
+
+let payGoogle = 400;
+let payAmazon = 380;
+let payFacebook = 350;
+let myWeekWages = ((payGoogle * 6) + (payAmazon * 4) + (payFacebook * 10));
+console.log(myWeekWages);
+
+//A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with her current schedule.
+
+var isNotFull = true;
+var doesNotConflict = true;
+
+if (isNotFull && doesNotConflict){
+    console.log("Welcome to class")
+} else {
+    console.log("Cannot register for class")
+}
+
+//A product offer can be applied only if a person buys more than 2 items, and the offer has not expired.
+// Premium members do not need to buy a specific amount of products.
+
+var buysMoreThanTwo = true;
+var isNotExpired = true;
+var ispremiumMember =  false;
+
+if (buysMoreThanTwo && isNotExpired || isNotExpired && ispremiumMember) {
+    console.log("Discounted stuff is good!")
+} else {
+    console.log("Offer not valid.")
+}
+
+
+//******************************** part 4
+
+let username = "codeup";
+let passWord = "somethingeasilyhacked";
+
+if ((passWord.length > 5) && (passWord.length < 20) && (passWord != username)) {
+    console.log("Welcome new user!")
+} else {
+    console.log("Does not meet criteria.")
+}
+
+//******************************** class warmup
+
+let isAtBar = false;
+let bac = .00;
+let age = 22;
+let cashOnHand = 5.99;
+
+
+let canHaveADrink = (bac < .08 && age >= 21 && cashOnHand >= 5.00) // true && false && true && true --> false
+
+if (canHaveADrink && isAtBar) { // true or false
+    console.log("Have a brewski my dude!");
+} else if (canHaveADrink && !isAtBar) { //if they can buy drink but not at bar
+    console.log("Drinks to go for u!");
+} else { // it was not true
+    console.log("Sorry buddy, no brew for u");
+}

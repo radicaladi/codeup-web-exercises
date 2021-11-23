@@ -239,9 +239,11 @@ console.log(product (3,4));
 function dividend(x, y) {
     return x / y;
 }
-console.log(dividend (12,4));
+console.log(dividend (22,7));
 
 function remainder(x, y) {
     return x % y;
 }
 console.log(remainder (14,5));
+
+//NEW EXERCISE BELOW

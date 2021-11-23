@@ -81,7 +81,7 @@ function calculateTip(bill) {
     if (bill >= 10 && bill <= 30) {
         return bill * 0.15;
     } else (bill >= 30 && bill <=10)
-        return (bill * 0.25);
+        return (bill * 0.18);
 }
 
 console.log(calculateTip(8));
@@ -93,7 +93,15 @@ console.log(calculateTip(8));
  * then display the dollar amount they should tip
  */
 
-
+// function theCheckout() {
+//     var checkPlease = prompt("Please enter your bill total", " ");
+//     var tipAmount = calculateTip(checkPlease);
+//     return alert("You should tip," + " " + tipAmount);
+// }
+//
+// calculateTip();
+// theCheckout();
+//***** I keep getting errors with this one and it only works in browser window. *****
 
 /**
  * TODO:
@@ -109,3 +117,12 @@ console.log(calculateTip(8));
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+function applyDiscount(x) {
+    var originalPrice = (x);
+    var discountPercent = .15;
+    return "Price to discount, " + (originalPrice * discountPercent) + ".";
+}
+
+applyDiscount();
+console.log(applyDiscount(100));

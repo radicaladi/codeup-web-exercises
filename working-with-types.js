@@ -226,20 +226,20 @@ function sum(x, y) {
 }
 console.log(sum (3,4));
 
-function sumAgain(x, y) {
+function difference(x, y) {
     return x - y;
 }
-console.log(sumAgain (3,4));
+console.log(difference (3,4));
 
 function product(x, y) {
     return x * y;
 }
 console.log(product (3,4));
 
-function difference(x, y) {
+function dividend(x, y) {
     return x / y;
 }
-console.log(difference (12,4));
+console.log(dividend (12,4));
 
 function remainder(x, y) {
     return x % y;

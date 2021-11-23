@@ -198,12 +198,12 @@ if (canHaveADrink && isAtBar) { // true or false
 // a boolean which informs if it's cloudy and a number which tells us how many planes are scheduled to fly.
 // If it is not cloudy AND there are less than 10 planes scheduled to fly, then today is a good day to fly!
 
-function todayIsAGoodDay (iscloudy, planesScheduled) {
+function todayIsAGoodDay(iscloudy, planesScheduled) {
 
     if (!iscloudy && planesScheduled < 10) {
         console.log("You are clear to fly around the country.");
     } else {
-        console.log ("Houston we have a problem.");
+        console.log("Houston we have a problem.");
     }
 
 }

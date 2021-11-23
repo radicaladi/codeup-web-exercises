@@ -143,7 +143,7 @@ console.log(myWeekWages);
 var isNotFull = true;
 var doesNotConflict = true;
 
-if (isNotFull && doesNotConflict){
+if (isNotFull && doesNotConflict) {
     console.log("Welcome to class")
 } else {
     console.log("Cannot register for class")
@@ -154,7 +154,7 @@ if (isNotFull && doesNotConflict){
 
 var buysMoreThanTwo = true;
 var isNotExpired = true;
-var ispremiumMember =  false;
+var ispremiumMember = false;
 
 if (buysMoreThanTwo && isNotExpired || isNotExpired && ispremiumMember) {
     console.log("Discounted stuff is good!")
@@ -191,3 +191,21 @@ if (canHaveADrink && isAtBar) { // true or false
 } else { // it was not true
     console.log("Sorry buddy, no brew for u");
 }
+
+//******************************** function exercise
+
+// Its definition has two parameters:
+// a boolean which informs if it's cloudy and a number which tells us how many planes are scheduled to fly.
+// If it is not cloudy AND there are less than 10 planes scheduled to fly, then today is a good day to fly!
+
+function todayIsAGoodDay (iscloudy, planesScheduled) {
+
+    if (!iscloudy && planesScheduled < 10) {
+        console.log("You are clear to fly around the country.");
+    } else {
+        console.log ("Houston we have a problem.");
+    }
+
+}
+
+todayIsAGoodDay(false, 10);

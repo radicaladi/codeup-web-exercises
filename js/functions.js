@@ -118,11 +118,11 @@ theCheckout();
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-// function applyDiscount(x) {
-//     var originalPrice = (x);
-//     var discountPercent = .15;
-//     return "Price to discount, " + (originalPrice * discountPercent) + ".";
-// }
-//
-// applyDiscount();
-// console.log(applyDiscount(100));
+function applyDiscount(x) {
+    var wholePrice = (x);
+    var discountAmt = .15;
+    return "Price to discount, $" + (wholePrice * discountAmt) + ".";
+}
+
+applyDiscount();
+console.log(applyDiscount(100));

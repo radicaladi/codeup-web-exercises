@@ -77,14 +77,16 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-function calculateTip(bill) {
-    if (bill >= 10 && bill <= 30) {
-        return bill * 0.15;
-    } else (bill >= 30 && bill <=10)
-        return (bill * 0.18);
+function calculateTip(Bill, Tip) {
+    var total = (Bill * Tip);
+    //round to two decimal places
+    total = Math.round(total * 100) / 100;
+    //next line allows us to always have two digits after decimal point
+    total = total.toFixed(2);
+    return "Based on your bill, you should tip $" + total + "!";
 }
 
-console.log(calculateTip(8));
+console.log(calculateTip(35, .10));
 
 /**
  * TODO:
@@ -118,11 +120,11 @@ console.log(calculateTip(8));
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function applyDiscount(x) {
-    var originalPrice = (x);
-    var discountPercent = .15;
-    return "Price to discount, " + (originalPrice * discountPercent) + ".";
-}
-
-applyDiscount();
-console.log(applyDiscount(100));
+// function applyDiscount(x) {
+//     var originalPrice = (x);
+//     var discountPercent = .15;
+//     return "Price to discount, " + (originalPrice * discountPercent) + ".";
+// }
+//
+// applyDiscount();
+// console.log(applyDiscount(100));

@@ -95,15 +95,13 @@ console.log(calculateTip(35, .10));
  * then display the dollar amount they should tip
  */
 
-// function theCheckout() {
-//     var checkPlease = prompt("Please enter your bill total", " ");
-//     var tipAmount = calculateTip(checkPlease);
-//     return alert("You should tip," + " " + tipAmount);
-// }
-//
-// calculateTip();
-// theCheckout();
-//***** I keep getting errors with this one and it only works in browser window. *****
+function theCheckout () {
+    var bill = prompt("Please enter your bill total here", " ");
+    var tip = prompt("Would you like to tip?", "ex: .20");
+    return alert("this is the amount you will be tipping " + calculateTip(bill, tip));
+}
+
+theCheckout();
 
 /**
  * TODO:

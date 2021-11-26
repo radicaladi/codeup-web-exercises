@@ -118,10 +118,10 @@ theCheckout();
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function applyDiscount(x) {
-    var wholePrice = (x);
+function applyDiscount(fullPrice) {
+    var wholePrice = (fullPrice);
     var discountAmt = .15;
-    return "Price to discount, $" + (wholePrice * discountAmt) + ".";
+    return "Price to discount, $" + (fullPrice * discountAmt) + ".";
 }
 
 applyDiscount();

@@ -121,8 +121,18 @@ theCheckout();
 function applyDiscount(fullPrice) {
     var wholePrice = (fullPrice);
     var discountAmt = .15;
-    return "Price to discount, $" + (fullPrice * discountAmt) + ".";
+    return "Price to discount, $" + (wholePrice * discountAmt) + ".";
 }
 
 applyDiscount();
 console.log(applyDiscount(100));
+
+//************** personal bmi calculator experiment
+
+function bmiCalculator(weight, height) {
+    //equation here is, bmi = weight(kg) / height(m)^2
+    return Math.round(weight/Math.pow(height, 2));
+}
+
+var bmi = bmiCalculator(99.7, 1.7);
+console.log(bmi);

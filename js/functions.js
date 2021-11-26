@@ -136,3 +136,13 @@ function bmiCalculator(weight, height) {
 
 var bmi = bmiCalculator(99.7, 1.7);
 console.log(bmi);
+
+//************* using prompt and alert in combination with bmi calculator
+
+function bmiGuiCalc () {
+    var yourWeight = prompt("Enter your weight here", "in kg");
+    var yourHeight = prompt("Enter your height here", "in meters");
+    return alert("Your calculated BMI is, " + bmiCalculator(yourWeight, yourHeight));
+}
+
+bmiGuiCalc(); //seems to work fine. i'd like to streamline the code however.

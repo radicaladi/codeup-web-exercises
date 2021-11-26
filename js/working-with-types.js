@@ -246,5 +246,9 @@ function remainder(x, y) {
 }
 console.log(remainder (14,5));
 
-//LET'S CALCULATE PIE
+//LET'S CALCULATE PIE TO TWO DECIMAL PLACES
 
+var numb = dividend(22, 7);
+numb = numb.toFixed(2);
+
+console.log(numb);

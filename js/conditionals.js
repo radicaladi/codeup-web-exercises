@@ -24,14 +24,14 @@
 
 function analyzeColor(color) {
     // return color + " is a nice color.";
-    if (color === "Red") {
+    if (color === "red") {
         return (color + " is my favorite color!");
     } else {
-        return (color + "is a nice color isn't it?");
+        return (color + " " + "is a nice color isn't it?");
     }
     }
 
-console.log(analyzeColor("Orange"));
+console.log(analyzeColor("orange"));
 
 
 // Don't change the next two lines!
@@ -47,7 +47,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-
+console.log(analyzeColor(randomColor));
 
 
 /**

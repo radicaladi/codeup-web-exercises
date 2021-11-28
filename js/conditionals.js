@@ -55,19 +55,19 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
 
-var analyzeColor = prompt("What is your favorite color?");
-
-switch(analyzeColor) {
-    case "Red":
-        alert("What a coincidence, that's my favorite!");
-        break;
-    case "Blue":
-        alert("That's okay I guess...");
-        break;
-    default:
-        alert(analyzeColor + " isn't my favorite, but it is nice!");
-        break;
-}
+// var analyzeColor = prompt("What is your favorite color?");
+//
+// switch(analyzeColor) {
+//     case "Red":
+//         alert("What a coincidence, that's my favorite!");
+//         break;
+//     case "Blue":
+//         alert("That's okay I guess...");
+//         break;
+//     default:
+//         alert(analyzeColor + " isn't my favorite, but it is nice!");
+//         break;
+// }
 
 /**
  * TODO:
@@ -76,17 +76,17 @@ switch(analyzeColor) {
  * function to show it to the user.
  */
 
-// function analyzeColor(color) {
-//     var colorsToo = prompt("What is your favorite color?", " ");
-//     // return color + " is a nice color.";
-//     if (color === "red") {
-//         return (color + " is my favorite color!");
-//     } else {
-//         return (color + " " + "is a nice color isn't it?");
-//     }
-//     }
-//
-// console.log(analyzeColor("orange"));
+function analyzeColor(color) {
+    var myColor = prompt("What is your favorite color?", " ");
+    // return color + " is a nice color.";
+    if (myColor === "red") {
+        return alert(myColor + " is my favorite color!");
+    } else {
+        return alert(myColor + " " + "is a nice color isn't it?");
+    }
+    }
+
+analyzeColor();
 
 
 

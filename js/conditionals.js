@@ -22,16 +22,16 @@
  * console.logging the function's return value
  */
 
-function analyzeColor(color) {
-    // return color + " is a nice color.";
-    if (color === "red") {
-        return (color + " is my favorite color!");
-    } else {
-        return (color + " " + "is a nice color isn't it?");
-    }
-    }
-
-console.log(analyzeColor("orange"));
+// function analyzeColor(color) {
+//     // return color + " is a nice color.";
+//     if (color === "red") {
+//         return (color + " is my favorite color!");
+//     } else {
+//         return (color + " " + "is a nice color isn't it?");
+//     }
+//     }
+//
+// console.log(analyzeColor("orange"));
 
 
 // Don't change the next two lines!
@@ -47,7 +47,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-console.log(analyzeColor(randomColor));
+// console.log(analyzeColor(randomColor));
 
 
 /**
@@ -55,12 +55,40 @@ console.log(analyzeColor(randomColor));
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
 
+var analyzeColor = prompt("What is your favorite color?");
+
+switch(analyzeColor) {
+    case "Red":
+        alert("What a coincidence, that's my favorite!");
+        break;
+    case "Blue":
+        alert("That's okay I guess...");
+        break;
+    default:
+        alert(analyzeColor + " isn't my favorite, but it is nice!");
+        break;
+}
+
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+// function analyzeColor(color) {
+//     var colorsToo = prompt("What is your favorite color?", " ");
+//     // return color + " is a nice color.";
+//     if (color === "red") {
+//         return (color + " is my favorite color!");
+//     } else {
+//         return (color + " " + "is a nice color isn't it?");
+//     }
+//     }
+//
+// console.log(analyzeColor("orange"));
+
+
 
 /* ########################################################################## */
 

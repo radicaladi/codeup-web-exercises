@@ -112,26 +112,46 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
-function calculateTotal(min, max) {
-    min = Math.ceil(0);
-    max = Math.floor(5);
-    var luckyNumber = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-    if (luckyNumber === 0) {
+function calculateTotal(number) {
+    if (number === 0) {
         return ("no discount");
-    } else if (luckyNumber === 1) {
-        return ("10% discount")
-    } else if (luckyNumber === 2) {
-        return ("25% discount")
-    } else if (luckyNumber === 3) {
-        return ("35% discount")
-    } else if (luckyNumber === 4) {
-        return ("50% discount")
-    } else if (luckyNumber === 5) {
-        return ("everything is free!")
-    }
+    } else if (number === 1) {
+        return ("10% discount");
+    } else if (number === 2) {
+        return ("25% discount");
+    } else if (number === 3) {
+        return ("35% discount");
+    } else if (number === 4) {
+        return ("50% discount");
+    } else (number === 5)
+        return ("everything is free!");
 }
-calculateTotal();
-console.log(calculateTotal());
+
+console.log(calculateTotal(2))
+
+//********************** THE BELOW IS SIMILAR BUT NOT EXACTLY WHAT IS BEING ASKED.
+
+// function calculateTotal(min, max) {
+//     min = Math.ceil(0);
+//     max = Math.floor(5);
+//     var luckyNumber = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+//     if (luckyNumber === 0) {
+//         return ("no discount");
+//     } else if (luckyNumber === 1) {
+//         return ("10% discount")
+//     } else if (luckyNumber === 2) {
+//         return ("25% discount")
+//     } else if (luckyNumber === 3) {
+//         return ("35% discount")
+//     } else if (luckyNumber === 4) {
+//         return ("50% discount")
+//     } else if (luckyNumber === 5) {
+//         return ("everything is free!")
+//     }
+// }
+// calculateTotal();
+// console.log(calculateTotal());
+//*********************** END OF SAVED FUNCTION
 
 /**
  * TODO:
@@ -142,7 +162,8 @@ console.log(calculateTotal());
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+
 
 /**
  * TODO:

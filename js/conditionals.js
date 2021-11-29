@@ -201,19 +201,20 @@ console.log(calculateTotal(2))
 // }
 // weatherClothes("Tornado");
 
-let osirisGrade = 80
+//********** GRADE CONDITIONAL EXERCISE
 
-function gradedStudent (grade) {
-    if (grade >= 90) {
-        console.log("A student");
-    } else if (grade < 90 && grade >= 80) {
-        console.log("B student");
-    } else if (grade < 80 && grade >= 70) {
-        console.log("C student");
-    } else if (grade < 70 && grade >= 60) {
-        console.log("D student");
-    } else {
-        return console.log("F student");
-    }
-}
-    gradedStudent(osirisGrade);
+// let osirisGrade = 89;
+//
+// function gradedStudent (grade) {
+//     if (grade >= 90) {
+//         console.log("A student");
+//     } else if (grade < 90 && grade >= 80) {
+//         console.log("B student");
+//     } else if (grade < 80 && grade >= 70) {
+//         console.log("C student");
+//     } else if (grade < 70 && grade >= 60) {
+//         console.log("D student");
+//     } else
+//         return console.log("F student");
+// }
+//     gradedStudent(osirisGrade);

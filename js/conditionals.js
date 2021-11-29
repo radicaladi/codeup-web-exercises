@@ -168,6 +168,7 @@ console.log(calculateTotal(2))
 //
 // alert(calculateTotal(luckyNumber* totalBill) + " is how much you pay.");
 // console.log(luckyNumber);
+
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -224,4 +225,23 @@ var weather = ['sunny', 'overcast', 'rainy', 'snowy', 'ash'];
 var randomWeather = weather[Math.floor(Math.random() * weather.length)];
 console.log(randomWeather);
 
-randomWeather === "sunny" ? console.log("matches") : console.log("doesn't match");
+// randomWeather === "sunny" ? console.log("matches") : console.log("doesn't match");
+
+//******** SWITCH STATEMENTS W/ RANDOM GENERATOR ABOVE
+switch(randomWeather) {
+    case "sunny":
+        console.log("wear shorts")
+        break;
+    case "overcast":
+        console.log("wear chinos")
+        break;
+    case "rainy":
+        console.log("wear jeans and raincoat")
+        break;
+    case "snowy":
+        console.log("wear jeans, coat, and boots")
+        break;
+    case "ash":
+        console.log("godspeed")
+        break;
+}

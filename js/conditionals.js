@@ -218,3 +218,10 @@ console.log(calculateTotal(2))
 //         return console.log("F student");
 // }
 //     gradedStudent(osirisGrade);
+
+//****** SHORTHAND CONDITIONALS w/  RANDOM GENERATOR
+var weather = ['sunny', 'overcast', 'rainy', 'snowy', 'ash'];
+var randomWeather = weather[Math.floor(Math.random() * weather.length)];
+console.log(randomWeather);
+
+randomWeather === "sunny" ? console.log("matches") : console.log("doesn't match");

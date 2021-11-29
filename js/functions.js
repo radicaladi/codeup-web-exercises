@@ -95,13 +95,13 @@ console.log(calculateTip(35, .10));
  * then display the dollar amount they should tip
  */
 
-function theCheckout () {
-    var bill = prompt("Please enter your bill total here", " ");
-    var tip = prompt("Would you like to tip?", "ex: .20");
-    return alert("this is the amount you will be tipping " + calculateTip(bill, tip));
-}
-
-theCheckout();
+// function theCheckout () {
+//     var bill = prompt("Please enter your bill total here", " ");
+//     var tip = prompt("Would you like to tip?", "ex: .20");
+//     return alert("this is the amount you will be tipping " + calculateTip(bill, tip));
+// }
+//
+// theCheckout();
 
 /**
  * TODO:
@@ -118,14 +118,14 @@ theCheckout();
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function applyDiscount(fullPrice) {
-    var wholePrice = (fullPrice);
-    var discountAmt = .15;
-    return "Price to discount, $" + (wholePrice * discountAmt) + ".";
+function applyDiscount(fullPrice, discountAmt) {
+    // var wholePrice = (fullPrice);
+    // var discountAmt = .15;
+    return "Price to discount, $" + (fullPrice * discountAmt) + ".";
 }
 
 applyDiscount();
-console.log(applyDiscount(100));
+console.log(applyDiscount(100, .15));
 
 //************** personal bmi calculator experiment
 

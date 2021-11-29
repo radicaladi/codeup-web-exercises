@@ -111,11 +111,11 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
-function calculateTotal(number) {
+function calculateTotal(0, 100) {
     if (number === 0) {
-        return ("no discount. pay full price.");
+        return ("no discount");
     } else if (number === 1) {
-        return (10 * 100);
+        return ("10% discount");
     } else if (number === 2) {
         return ("25% discount");
     } else if (number === 3) {
@@ -193,29 +193,29 @@ console.log(calculateTotal(2))
  * HINT: The way we prompt for a value could be improved
  */
 
-var askForNumber = confirm('Would you like to enter a number?');
-
-if (askForNumber) {
-    var securedNumber = parseInt(prompt("enter a number", " "));
-    if(isNaN(securedNumber)) {
-        alert("incorrect input data type!");
-    }
-    else {
-        if (securedNumber % 2 === 0){
-            alert("The number is even.");
-            alert(securedNumber + " plus 100 is," + " " + (securedNumber+100));
-        }
-        else {
-            alert("The number is odd.");
-            alert(securedNumber + " plus 100 is," + " " + (securedNumber+100));
-        }
-        if (securedNumber < 0) {
-            alert ("This number is also negative");
-        } else {
-            alert("This number is also positive.");
-        }
-    }
-}
+// var askForNumber = confirm('Would you like to enter a number?');
+//
+// if (askForNumber) {
+//     var securedNumber = parseInt(prompt("enter a number", " "));
+//     if(isNaN(securedNumber)) {
+//         alert("incorrect input data type!");
+//     }
+//     else {
+//         if (securedNumber % 2 === 0){
+//             alert("The number is even.");
+//             alert(securedNumber + " plus 100 is," + " " + (securedNumber+100));
+//         }
+//         else {
+//             alert("The number is odd.");
+//             alert(securedNumber + " plus 100 is," + " " + (securedNumber+100));
+//         }
+//         if (securedNumber < 0) {
+//             alert ("This number is also negative");
+//         } else {
+//             alert("This number is also positive.");
+//         }
+//     }
+// }
 // ********** Conditionals class exercise ********
 // function weatherClothes (weather){
 //     if (weather === "sunny") {

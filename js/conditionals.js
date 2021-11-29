@@ -115,7 +115,7 @@ function calculateTotal(number) {
     if (number === 0) {
         return ("no discount. pay full price.");
     } else if (number === 1) {
-        return ("10% discount");
+        return (10 * 100);
     } else if (number === 2) {
         return ("25% discount");
     } else if (number === 3) {
@@ -162,11 +162,17 @@ console.log(calculateTotal(2))
  */
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
-//
-// var totalBill = prompt("Enter your total bill", "");
-//
-// alert(calculateTotal(luckyNumber* totalBill) + " is how much you pay.");
 // console.log(luckyNumber);
+//
+// var whatIsYourBill = prompt("Enter your bill here", " ");
+// alert("Your lucky number is, " + luckyNumber)
+// alert("Your get a " + calculateTotal(luckyNumber));
+// alert("You would pay, " + whatIsYourBill + " before discounts.");
+
+// calculateTotal(luckyNumber);
+// alert("your lucky number is, " + luckyNumber + "." + "Your discount is," + calculateTotal(luckyNumber));
+// alert("You would pay, " + whatIsYourBill + " before discounts.");
+// alert("But now you pay" + (whatIsYourBill - (whatIsYourBill * luckyNumber));
 
 /**
  * TODO:
@@ -187,8 +193,30 @@ console.log(calculateTotal(2))
  * HINT: The way we prompt for a value could be improved
  */
 
+var askForNumber = confirm('Would you like to enter a number?');
 
-// ********** Conditionals class exercise
+if (askForNumber) {
+    var securedNumber = parseInt(prompt("enter a number", " "));
+    if(isNaN(securedNumber)) {
+        alert("incorrect input data type!");
+    }
+    else {
+        if (securedNumber % 2 === 0){
+            alert("The number is even.");
+            alert(securedNumber + " plus 100 is," + " " + (securedNumber+100));
+        }
+        else {
+            alert("The number is odd.");
+            alert(securedNumber + " plus 100 is," + " " + (securedNumber+100));
+        }
+        if (securedNumber < 0) {
+            alert ("This number is also negative");
+        } else {
+            alert("This number is also positive.");
+        }
+    }
+}
+// ********** Conditionals class exercise ********
 // function weatherClothes (weather){
 //     if (weather === "sunny") {
 //         console.log("wear shorts");
@@ -201,7 +229,7 @@ console.log(calculateTotal(2))
 // }
 // weatherClothes("Tornado");
 
-//********** GRADE CONDITIONAL EXERCISE
+//********** GRADE CONDITIONAL EXERCISE ********
 
 // var osirisGrade = 90;
 //
@@ -219,38 +247,38 @@ console.log(calculateTotal(2))
 // }
 //     gradedStudent(osirisGrade);
 
-let studentGrade = 95
-switch(true) {
-    case studentGrade >= 90:
-        console.log("Ace student")
-        break;
-    case studentGrade <= 90:
-        console.log("Not an A student")
-        break;
-}
+// let studentGrade = 85
+// switch(true) {
+//     case studentGrade >= 90:
+//         console.log("Ace student")
+//         break;
+//     case studentGrade <= 90:
+//         console.log("Not an A student")
+//         break;
+// }
 
-//****** SHORTHAND CONDITIONALS w/  RANDOM GENERATOR
-var weather = ['sunny', 'overcast', 'rainy', 'snowy', 'ash'];
-var randomWeather = weather[Math.floor(Math.random() * weather.length)];
-console.log(randomWeather);
+//****** SHORTHAND CONDITIONALS w/  RANDOM GENERATOR ********
+// var weather = ['sunny', 'overcast', 'rainy', 'snowy', 'ash'];
+// var randomWeather = weather[Math.floor(Math.random() * weather.length)];
+// console.log(randomWeather);
 
 // randomWeather === "sunny" ? console.log("matches") : console.log("doesn't match");
 
-//******** SWITCH STATEMENTS W/ RANDOM GENERATOR ABOVE
-switch (randomWeather) {
-    case "sunny":
-        console.log("wear shorts")
-        break;
-    case "overcast":
-        console.log("wear chinos")
-        break;
-    case "rainy":
-        console.log("wear jeans and raincoat")
-        break;
-    case "snowy":
-        console.log("wear jeans, coat, and boots")
-        break;
-    case "ash":
-        console.log("godspeed")
-        break;
-}
+//******** SWITCH STATEMENTS W/ RANDOM GENERATOR ABOVE ********
+// switch (randomWeather) {
+//     case "sunny":
+//         console.log("wear shorts")
+//         break;
+//     case "overcast":
+//         console.log("wear chinos")
+//         break;
+//     case "rainy":
+//         console.log("wear jeans and raincoat")
+//         break;
+//     case "snowy":
+//         console.log("wear jeans, coat, and boots")
+//         break;
+//     case "ash":
+//         console.log("godspeed")
+//         break;
+// }

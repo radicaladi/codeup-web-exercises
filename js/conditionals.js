@@ -76,17 +76,17 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * function to show it to the user.
  */
 
-function analyzeColor(color) {
-    var myColor = prompt("What is your favorite color?", " ");
-    // return color + " is a nice color.";
-    if (myColor === "red") {
-        return alert(myColor + " is my favorite color!");
-    } else {
-        return alert(myColor + " " + "is a nice color isn't it?");
-    }
-    }
-
-analyzeColor();
+// function analyzeColor(color) {
+//     var myColor = prompt("What is your favorite color?", " ");
+//     // return color + " is a nice color.";
+//     if (myColor === "red") {
+//         return alert(myColor + " is my favorite color!");
+//     } else {
+//         return alert(myColor + " " + "is a nice color isn't it?");
+//     }
+// }
+//
+// analyzeColor();
 
 
 
@@ -111,6 +111,27 @@ analyzeColor();
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+
+function calculateTotal(min, max) {
+    min = Math.ceil(0);
+    max = Math.floor(5);
+    var luckyNumber = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+    if (luckyNumber === 0) {
+        return ("no discount");
+    } else if (luckyNumber === 1) {
+        return ("10% discount")
+    } else if (luckyNumber === 2) {
+        return ("25% discount")
+    } else if (luckyNumber === 3) {
+        return ("35% discount")
+    } else if (luckyNumber === 4) {
+        return ("50% discount")
+    } else if (luckyNumber === 5) {
+        return ("everything is free!")
+    }
+}
+calculateTotal();
+console.log(calculateTotal());
 
 /**
  * TODO:

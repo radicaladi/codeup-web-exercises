@@ -114,7 +114,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
 function calculateTotal(number) {
     if (number === 0) {
-        return ("no discount");
+        return ("no discount. pay full price.");
     } else if (number === 1) {
         return ("10% discount");
     } else if (number === 2) {
@@ -162,9 +162,12 @@ console.log(calculateTotal(2))
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-
-
+// var luckyNumber = Math.floor(Math.random() * 6);
+//
+// var totalBill = prompt("Enter your total bill", "");
+//
+// alert(calculateTotal(luckyNumber* totalBill) + " is how much you pay.");
+// console.log(luckyNumber);
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -183,3 +186,34 @@ var luckyNumber = Math.floor(Math.random() * 6);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+
+// ********** Conditionals class exercise
+// function weatherClothes (weather){
+//     if (weather === "sunny") {
+//         console.log("wear shorts");
+//     } else if (weather === "rainy") {
+//         console.log("wear chinos");
+//     } else if (weather === "snowy") {
+//         console.log("wear jeans");
+//     } else
+//         console.log("Good luck to you.");
+// }
+// weatherClothes("Tornado");
+
+let osirisGrade = 80
+
+function gradedStudent (grade) {
+    if (grade >= 90) {
+        console.log("A student");
+    } else if (grade < 90 && grade >= 80) {
+        console.log("B student");
+    } else if (grade < 80 && grade >= 70) {
+        console.log("C student");
+    } else if (grade < 70 && grade >= 60) {
+        console.log("D student");
+    } else {
+        return console.log("F student");
+    }
+}
+    gradedStudent(osirisGrade);

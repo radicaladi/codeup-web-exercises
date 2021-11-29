@@ -7,3 +7,21 @@ aSentence += aboutSelf += enjoyThis;
 
 console.log(aSentence);
 
+//********* reverseString warmup below
+
+let stringReversing = "nintendo";
+
+let reverseString = [...stringReversing].reverse().join("");
+console.log(reverseString);
+
+//**** THE BELOW IS A LONGER WAY OF DOING THE ABOVE.
+// let splitString = stringReversing.split("")
+// console.log(splitString);
+//
+// let reverseString = splitString.reverse();
+// console.log(reverseString);
+//
+// let joinString = reverseString.join("");
+// console.log(joinString);
+
+//******** end warmup

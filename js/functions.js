@@ -81,7 +81,7 @@ function calculateTip(Bill, Tip) {
     var total = (Bill * Tip);
     //round to two decimal places
     total = Math.round(total * 100) / 100;
-    //next line allows us to always have two digits after decimal point
+    //next line sets result to two digits after decimal point
     total = total.toFixed(2);
     return "Based on your bill, you should tip $" + total + "!";
 }

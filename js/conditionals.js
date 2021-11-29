@@ -89,7 +89,6 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // analyzeColor();
 
 
-
 /* ########################################################################## */
 
 /**
@@ -124,7 +123,7 @@ function calculateTotal(number) {
     } else if (number === 4) {
         return ("50% discount");
     } else (number === 5)
-        return ("everything is free!");
+    return ("everything is free!");
 }
 
 console.log(calculateTotal(2))
@@ -204,7 +203,7 @@ console.log(calculateTotal(2))
 
 //********** GRADE CONDITIONAL EXERCISE
 
-// let osirisGrade = 89;
+// var osirisGrade = 90;
 //
 // function gradedStudent (grade) {
 //     if (grade >= 90) {
@@ -220,6 +219,16 @@ console.log(calculateTotal(2))
 // }
 //     gradedStudent(osirisGrade);
 
+let studentGrade = 95
+switch(true) {
+    case studentGrade >= 90:
+        console.log("Ace student")
+        break;
+    case studentGrade <= 90:
+        console.log("Not an A student")
+        break;
+}
+
 //****** SHORTHAND CONDITIONALS w/  RANDOM GENERATOR
 var weather = ['sunny', 'overcast', 'rainy', 'snowy', 'ash'];
 var randomWeather = weather[Math.floor(Math.random() * weather.length)];
@@ -228,7 +237,7 @@ console.log(randomWeather);
 // randomWeather === "sunny" ? console.log("matches") : console.log("doesn't match");
 
 //******** SWITCH STATEMENTS W/ RANDOM GENERATOR ABOVE
-switch(randomWeather) {
+switch (randomWeather) {
     case "sunny":
         console.log("wear shorts")
         break;

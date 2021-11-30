@@ -139,16 +139,16 @@ console.log(bmi);
 
 //************* using prompt and alert in combination with bmi calculator
 
-function bmiGuiCalc () {
-    var yourWeight = prompt("Enter your weight here", "in kg");
-    var yourHeight = prompt("Enter your height here", "in meters");
-    return alert("Your calculated BMI is, " + bmiCalculator(yourWeight, yourHeight));
-}
+// function bmiGuiCalc () {
+//     var yourWeight = prompt("Enter your weight here", "in kg");
+//     var yourHeight = prompt("Enter your height here", "in meters");
+//     return alert("Your calculated BMI is, " + bmiCalculator(yourWeight, yourHeight));
+// }
+//
+// bmiGuiCalc(); //seems to work fine. i'd like to streamline the code however.
 
-bmiGuiCalc(); //seems to work fine. i'd like to streamline the code however.
 
-
-//********** 30 NOV CONDITIONALS WARM UP *******
+// ********** 30 NOV CONDITIONALS WARM UP *******
 
 /** Write a function that accepts the top three bowling scores and returns the average.
  * */
@@ -157,58 +157,71 @@ const bowler1 = 180;
 const bowler2 = 200;
 const bowler3 =210;
 
-function getAvg() {
-    const total = (bowler1+bowler2+bowler3);
+function getAvg(score1, score2, score3) {
+    const total = (score1+score2+score3);
     return (total / 3);
 }
 
-const average = getAvg();
+const average = getAvg(bowler1, bowler2, bowler3);
 console.log(average);
 
 /////
 
 var bowlingGame = ['210', '200', '180']
 
-function bestScore(bowlingGame) {
-    if (Math.max(bowlingGame) % 3 === 0 || Math.max(bowlingGame) % 5 === 0 ) {
+function bestScore(array) {
+    if (Math.max(array) % 3 === 0 || Math.max(array) % 5 === 0 ) {
         return console.log("true");
     } else
         return console.log("false");
 }
-
-console.log(bestScore(bowlingGame));
+bestScore(bowlingGame); // Just call the function, no need to console log it in this case.
 
 /////
 
 let bestBowlingPlace = "ThEbEsTbOwLiNgPlAcEever";
-function lowercase (bestBowlingPlace) {
-    return bestBowlingPlace.toLowerCase();
+function lowercase (source) {
+    return source.toLowerCase();
 }
 console.log(lowercase(bestBowlingPlace));
 
 /////
 
-let score = 100;
+let score = 109;
 let name = "bowling is fun";
 let bowlingIsFun = "true";
 let players = ['tom', 'jerry', 'garfield'];
+
 function varType (variable) {
     return typeof (variable);
-}
+} // console log this one because it is not if/else ?
 
+console.log(varType(score));
+console.log(varType(players));
 console.log(varType(bowlingIsFun));
 
 /////
 /**Write a function that executes all of the above functions
  */
 
-function execute all ()
+// function execute all ()
 
 /**Copy and execute the following functions, and find the Error: (Hint: try console logging the result)
  */
 
-let myFunction (firstName, lastName) return firstName + lastName; };
+function myFunction(firstName, lastName) {
+    return firstName + " " + lastName;
+}
 
-function thatsNotMyName(name){ if(name = "Laura"){ return "that's me!, I'm " + "name"} } else { return "that's not my name" }
+console.log(myFunction('adi', 'cooly'));
 
-console.log(thatsNotMyName());
+
+function thatsNotMyName(name){
+if (name === "Laura") {
+     return "that's me!" + "I'm ," + "name"
+    } else {
+         return "that's not my name"
+        }
+}
+
+console.log(thatsNotMyName("Yoga"));  // this one is if/else but has a return beside true/false.

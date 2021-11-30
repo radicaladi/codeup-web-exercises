@@ -111,22 +111,28 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
-function calculateTotal(0, 100) {
-    if (number === 0) {
-        return ("no discount");
-    } else if (number === 1) {
-        return ("10% discount");
-    } else if (number === 2) {
-        return ("25% discount");
-    } else if (number === 3) {
-        return ("35% discount");
-    } else if (number === 4) {
-        return ("50% discount");
-    } else (number === 5)
-    return ("everything is free!");
+function calculateTotal(luckyNumber, totalAmount) {
+    if (luckyNumber === 0) {
+        return (totalAmount * 1);
+
+    } else if (luckyNumber === 1) {
+        return (totalAmount - (totalAmount * .10));
+
+    } else if (luckyNumber === 2) {
+        return (totalAmount - (totalAmount * .25));
+
+    } else if (luckyNumber === 3) {
+        return (totalAmount - (totalAmount * .35));
+
+    } else if (luckyNumber === 4) {
+        return (totalAmount - (totalAmount * .50));
+
+    } else if (luckyNumber === 5) {
+        return (0);
+    }
 }
 
-console.log(calculateTotal(2))
+console.log(calculateTotal(4, 100));
 
 //********************** THE BELOW IS SIMILAR BUT NOT EXACTLY WHAT IS BEING ASKED.
 
@@ -161,19 +167,36 @@ console.log(calculateTotal(2))
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-// console.log(luckyNumber);
-//
-// var whatIsYourBill = prompt("Enter your bill here", " ");
-// alert("Your lucky number is, " + luckyNumber)
-// alert("Your get a " + calculateTotal(luckyNumber));
-// alert("You would pay, " + whatIsYourBill + " before discounts.");
 
-// calculateTotal(luckyNumber);
-// alert("your lucky number is, " + luckyNumber + "." + "Your discount is," + calculateTotal(luckyNumber));
-// alert("You would pay, " + whatIsYourBill + " before discounts.");
-// alert("But now you pay" + (whatIsYourBill - (whatIsYourBill * luckyNumber));
+var luckyNumber = Math.floor(Math.random() * 6);
+console.log(luckyNumber); // this is to double check results for accuracy.
 
+var whatIsYourBill = prompt("Enter your bill here", " ");
+alert("Your lucky number is, " + luckyNumber);
+if (luckyNumber === 0) {
+    alert("How unlucky! You missed the discount. Sorry");
+    alert ("Your grand total is, $" + calculateTotal(luckyNumber, whatIsYourBill));
+
+} else if (luckyNumber === 1) {
+    alert("You get a 10% discount!");
+    alert ("Your grand total is, $" + calculateTotal(luckyNumber, whatIsYourBill));
+
+} else if (luckyNumber === 2) {
+    alert("You get a 25% discount!");
+    alert ("Your grand total is, $" + calculateTotal(luckyNumber, whatIsYourBill));
+} else if (luckyNumber === 3) {
+    alert("You get a 35% discount!");
+    alert ("Your grand total is, $" + calculateTotal(luckyNumber, whatIsYourBill));
+
+} else if (luckyNumber === 4) {
+    alert("You get a 50% discount!");
+    alert ("Your grand total is, $" + calculateTotal(luckyNumber, whatIsYourBill));
+
+} else if (luckyNumber === 5) {
+    alert("Your lucky day!");
+    alert ("Your item is free!");
+
+}
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -215,7 +238,8 @@ console.log(calculateTotal(2))
 //             alert("This number is also positive.");
 //         }
 //     }
-// }
+// } //THIS IS THE BEST PIECE OF CODE I HAVE WRITTEN THIS FAR. GLORY GLORY. LOL
+
 // ********** Conditionals class exercise ********
 // function weatherClothes (weather){
 //     if (weather === "sunny") {

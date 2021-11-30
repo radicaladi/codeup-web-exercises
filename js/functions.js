@@ -146,3 +146,69 @@ function bmiGuiCalc () {
 }
 
 bmiGuiCalc(); //seems to work fine. i'd like to streamline the code however.
+
+
+//********** 30 NOV CONDITIONALS WARM UP *******
+
+/** Write a function that accepts the top three bowling scores and returns the average.
+ * */
+
+const bowler1 = 180;
+const bowler2 = 200;
+const bowler3 =210;
+
+function getAvg() {
+    const total = (bowler1+bowler2+bowler3);
+    return (total / 3);
+}
+
+const average = getAvg();
+console.log(average);
+
+/////
+
+var bowlingGame = ['210', '200', '180']
+
+function bestScore(bowlingGame) {
+    if (Math.max(bowlingGame) % 3 === 0 || Math.max(bowlingGame) % 5 === 0 ) {
+        return console.log("true");
+    } else
+        return console.log("false");
+}
+
+console.log(bestScore(bowlingGame));
+
+/////
+
+let bestBowlingPlace = "ThEbEsTbOwLiNgPlAcEever";
+function lowercase (bestBowlingPlace) {
+    return bestBowlingPlace.toLowerCase();
+}
+console.log(lowercase(bestBowlingPlace));
+
+/////
+
+let score = 100;
+let name = "bowling is fun";
+let bowlingIsFun = "true";
+let players = ['tom', 'jerry', 'garfield'];
+function varType (variable) {
+    return typeof (variable);
+}
+
+console.log(varType(bowlingIsFun));
+
+/////
+/**Write a function that executes all of the above functions
+ */
+
+function execute all ()
+
+/**Copy and execute the following functions, and find the Error: (Hint: try console logging the result)
+ */
+
+let myFunction (firstName, lastName) return firstName + lastName; };
+
+function thatsNotMyName(name){ if(name = "Laura"){ return "that's me!, I'm " + "name"} } else { return "that's not my name" }
+
+console.log(thatsNotMyName());

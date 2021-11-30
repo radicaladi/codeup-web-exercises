@@ -29,7 +29,7 @@
 //     } else {
 //         return (color + " " + "is a nice color isn't it?");
 //     }
-//     }
+// }
 //
 // console.log(analyzeColor("orange"));
 
@@ -216,29 +216,30 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * HINT: The way we prompt for a value could be improved
  */
 
-// var askForNumber = confirm('Would you like to enter a number?');
-//
-// if (askForNumber) {
-//     var securedNumber = parseInt(prompt("enter a number", " "));
-//     if(isNaN(securedNumber)) {
-//         alert("incorrect input data type!");
-//     }
-//     else {
-//         if (securedNumber % 2 === 0){
-//             alert("The number is even.");
-//             alert(securedNumber + " plus 100 is," + " " + (securedNumber+100));
-//         }
-//         else {
-//             alert("The number is odd.");
-//             alert(securedNumber + " plus 100 is," + " " + (securedNumber+100));
-//         }
-//         if (securedNumber < 0) {
-//             alert ("This number is also negative");
-//         } else {
-//             alert("This number is also positive.");
-//         }
-//     }
-// } //THIS IS THE BEST PIECE OF CODE I HAVE WRITTEN THIS FAR. GLORY GLORY. LOL
+var askForNumber = confirm('Would you like to enter a number?');
+
+if (askForNumber) {
+    var securedNumber = parseInt(prompt("enter a number", " "));
+    if(isNaN(securedNumber)) {
+        alert("incorrect input data type!");
+    }
+    else {
+        if (securedNumber % 2 === 0){
+            alert("The number is even.");
+            alert(securedNumber + " plus 100 is," + " " + (securedNumber+100));
+        }
+        else {
+            alert("The number is odd.");
+            alert(securedNumber + " plus 100 is," + " " + (securedNumber+100));
+        }
+        if (securedNumber < 0) {
+            alert ("This number is also negative");
+        } else {
+            alert("This number is also positive.");
+        }
+    }
+}
+// THIS IS THE BEST PIECE OF CODE I HAVE WRITTEN THIS FAR. GLORY GLORY. LOL
 
 // ********** Conditionals class exercise ********
 // function weatherClothes (weather){

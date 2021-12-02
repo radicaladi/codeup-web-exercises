@@ -57,24 +57,24 @@
 
 // some from memory post-lunch
 
-let duece = 0;
-do {
-    console.log("these here, ", duece);
-    duece += 2;
-} while (duece <= 10);
-
-while (duece <= 15 && duece > 10){
-    console.log("even more here, ", duece);
-    duece++;
-}
+// let duece = 0;
+// do {
+//     console.log("these here, ", duece);
+//     duece += 2;
+// } while (duece <= 10);
+//
+// while (duece <= 15 && duece > 10){
+//     console.log("even more here, ", duece);
+//     duece++;
+// }
 
 // using prompt() and alert(), write a loop that will continue to ask for the correct password until the
 // correct password is given.
 
-let password = 'codeup';
-var enterPW = prompt("Enter your password:", " ");
-
-while (enterPW !== password) {
-    alert("Incorrect password!");
-    enterPW = prompt("Enter your password:", " ");
-} alert("Access granted.")
+// let password = 'codeup';
+// var enterPW = prompt("Enter your password:", " ");
+//
+// while (enterPW !== password) {
+//     alert("Incorrect password!");
+//     enterPW = prompt("Enter your password:", " ");
+// } alert("Access granted.")

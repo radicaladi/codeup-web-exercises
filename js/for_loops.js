@@ -40,7 +40,9 @@
 //     spaces = '';
 // }
 
-
+for (let i = 100; i >= 5; i-= 5){
+    console.log(i);
+}
 
 /** Class exercises
  * Thursday, 2 December 2021

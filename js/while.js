@@ -77,4 +77,4 @@ var enterPW = prompt("Enter your password:", " ");
 while (enterPW !== password) {
     alert("Incorrect password!");
     enterPW = prompt("Enter your password:", " ");
-}
+} alert("Access granted.")

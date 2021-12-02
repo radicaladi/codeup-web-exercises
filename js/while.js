@@ -1,5 +1,25 @@
 "use strict";
 
+// let i = 2;
+// while (i < 131072){
+//     console.log("iteration: " + i);
+//     i = i + i;
+// }
+
+var allCones = Math.floor(Math.random() * 50) + 50; //code to generate random number 50-100.
+let i = 0;
+console.log(allCones + " Number of cones to sell today.");
+
+do {
+    let conesSold = Math.floor(Math.random() * 5) + 1 //code to generate random number 1-5.
+    i++;
+    console.log("Customer: " + i)
+    console.log("Customer purchase: ", + conesSold);
+} while (i <= allCones );
+    if (i >= allCones){
+        console.log("Sorry. We're sold out.")
+    }
+
 /** Class exercises
  * Thursday, 2 December 2021
  * */

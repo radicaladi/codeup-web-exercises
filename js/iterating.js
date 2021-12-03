@@ -15,7 +15,7 @@
      * array.
      */
 
-    console.log(names.length);
+    // console.log(names.length);
 
     /**
      * TODO:
@@ -23,10 +23,10 @@
      * accessing each element's index.
      */
 
-    console.log(names[0]);
-    console.log(names[1]);
-    console.log(names[2]);
-    console.log(names[3]);
+    // console.log(names[0]);
+    // console.log(names[1]);
+    // console.log(names[2]);
+    // console.log(names[3]);
 
     /**
      * TODO:
@@ -34,18 +34,18 @@
      * array.
      */
 
-    for( let i = 0; i < names.length; i++){
-        console.log("A name of a WWF legend is, " + names[i]);
-    }
+    // for( let i = 0; i < names.length; i++){
+    //     console.log("A name of a WWF legend is, " + names[i]);
+    // }
 
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
 
-    names.forEach(function(element, index, array) {
-        // ...
-    })
+    // names.forEach(function (names){
+    //     console.log("Here is a name of a WWF legend: " + names);
+    // });
 
     /**
      * TODO:
@@ -63,7 +63,52 @@
 
 })();
 
+
 /** Class exercises
  * Friday, 3 December 2021
  * */
 
+//***NOTES***
+    //When ACCESSING an element IN an Array:
+    // nameOfArray[position within array] -- reminder! Arrays ALWAYS start @ ZERO.
+
+//***END NOTES*****
+
+//Creat an array of top 5 fav foods.
+
+let myFavFoods = ['chili-dogs', 'japchae', 'ramen', 'tacos', 'tortas'];
+console.log(myFavFoods);
+// console.log(myFavFoods[0]);
+
+//concatenate the last name and first name
+//access a name(array above) value
+//re-assign that value to equal name + last name
+
+// console.log(names[3]);
+// names[3] = names[3] + " hall";
+// console.log(names[3]);
+
+//using above method
+//add ratings to fav foods
+
+// console.log(myFavFoods[1]); //japchae
+// myFavFoods[1] = myFavFoods[1] + " rated 8";
+// console.log(myFavFoods[1]);
+
+let adi = ['Adrian', 31, 'Phoenix', 'mac', ['chili-dog', 'japchae', 'ramen'], 2021]
+let age = adi[1];
+console.log(age);
+let innerArr = adi[4]; //all withing the inner array equates position of index.
+console.log(innerArr); //this calls the array in an array
+console.log(innerArr[1]); // because innerArr was assigned to that array. Pulling index 1.
+console.log(adi[4][2]); //alternate way to access index of array within array.
+
+function desiredAge (num){
+    return num - 3;
+}
+//this accesses the array by calling
+//the variable with stored array value
+//and applying it to function and running the code within.
+//con-logging the process to return result
+
+console.log(desiredAge(age));

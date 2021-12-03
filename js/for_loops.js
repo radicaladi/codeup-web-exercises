@@ -4,31 +4,25 @@
 // for loops are used when you know the number of iterations (things to count).
 // loop syntax: 1) starting point. 2) condition. 3) how to iterate.
 
-// function showMultiplicationTable (input){
-//     console.log(input*1);
-//     console.log(input*2);
-//     console.log(input*3);
-//     console.log(input*4);
-//     console.log(input*5);
-//     console.log(input*6);
-//     console.log(input*7);
-//     console.log(input*8);
-//     console.log(input*9);
-//     console.log(input*10);
-// }
-//
-// showMultiplicationTable(9);
-
-
-// for(let i = 0; i < 10; i++){
-//     let luckyNumber = Math.floor(Math.random() * 200);
-//     if (luckyNumber % 2 === 0){
-//         console.log("The number, " + luckyNumber + " is even.")
-//     } else {
-//         console.log("The number, " + luckyNumber + " is odd.")
+// function showMultiplicationTable(input) {
+//     for (let i = 1; i <= 10; i++) {
+//         let output = input * i;
+//         console.log(input + " x " + i + " = " + output);
 //     }
 // }
 
+// showMultiplicationTable(9);
+
+//
+// for(let i = 0; i < 10; i++){
+//     let luckyNumber = Math.floor(Math.random() * 200);
+//     if (luckyNumber % 2 === 0){
+//         console.log(luckyNumber + " is even.")
+//     } else {
+//         console.log(luckyNumber + " is odd.")
+//     }
+// }
+//
 // let rows = 9
 // let spaces = '';
 //
@@ -39,7 +33,9 @@
 //     console.log(spaces);
 //     spaces = '';
 // }
-//
+
+///this is a separator between loops.///
+
 // for (let i = 100; i >= 5; i-= 5){
 //     console.log(i);
 // }

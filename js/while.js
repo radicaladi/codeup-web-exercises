@@ -19,19 +19,36 @@
  */
 
 var allCones = Math.floor(Math.random() * 50) + 50; //code to generate random number 50-100.
-let i = 0;
 
+// let i = 0;
+//
 console.log(allCones + " Number of cones to sell today.");
+//
+// do {
+//     let conesSold = Math.floor(Math.random() * 5) + 1 //code to generate random number 1-5.
+//     i++;
+//     console.log("Customer: " + i)
+//     console.log("Customer purchase: ", + conesSold);
+// } while (i <= allCones );
+//     if (i >= allCones){
+//         console.log("Sorry. We're sold out.")
+//     }
 
 do {
-    let conesSold = Math.floor(Math.random() * 5) + 1 //code to generate random number 1-5.
-    i++;
-    console.log("Customer: " + i)
-    console.log("Customer purchase: ", + conesSold);
-} while (i <= allCones );
-    if (i >= allCones){
-        console.log("Sorry. We're sold out.")
+    var conesToPurchase = Math.floor(Math.random() * 5) + 1;
+
+    if (conesToPurchase <= allCones){
+        console.log(conesToPurchase + " cones sold...");
+        allCones -= conesToPurchase;
+    } else {
+        console.log("Cannot sell you " + conesToPurchase + " cones, I only have " + allCones + "...");
     }
+
+    console.log(allCones);
+
+} while(allCones > 0);
+
+console.log("Woo! I've sold all the cones!");
 
 /** Class exercises
  * Thursday, 2 December 2021

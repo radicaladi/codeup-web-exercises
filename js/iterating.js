@@ -7,7 +7,7 @@
      * 'names'.
      */
 
-    let names = ['Ric', 'Kevin', 'Shawn', 'Scott'];
+    let names = ['Ric', 'Kevin', 'Shawn', 'Scott', 'Hulk'];
 
     /**
      * TODO:
@@ -15,7 +15,7 @@
      * array.
      */
 
-    // console.log(names.length);
+    console.log(names.length);
 
     /**
      * TODO:
@@ -23,10 +23,10 @@
      * accessing each element's index.
      */
 
-    // console.log(names[0]);
-    // console.log(names[1]);
-    // console.log(names[2]);
-    // console.log(names[3]);
+    console.log(names[0]);
+    console.log(names[1]);
+    console.log(names[2]);
+    console.log(names[3]);
 
     /**
      * TODO:
@@ -34,18 +34,18 @@
      * array.
      */
 
-    // for( let i = 0; i < names.length; i++){
-    //     console.log("A name of a WWF legend is, " + names[i]);
-    // }
+    for( let i = 0; i < names.length; i++){
+        console.log("A WWF legend is, " + names[i]);
+    }
 
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
 
-    // names.forEach(function (names){
-    //     console.log("Here is a name of a WWF legend: " + names);
-    // });
+    names.forEach(function (names){
+        console.log("A name of a WWF legend: " + names);
+    });
 
     /**
      * TODO:
@@ -60,22 +60,25 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-    // let thisArray = [1, 2, 3, 4, 5];
-    //
-    // function one (input){
-    //     return thisArray[input];
-    // }
-    // console.log(one(0));
-    //
-    // function two (input){
-    //     return thisArray[input];
-    // }
-    // console.log(two(1));
-    //
-    // function three (input){
-    //     return thisArray[input];
-    // }
-    // console.log(three(4));
+
+    function one (array){
+        return array[0];
+    }
+
+    function two (array){
+        return array[1];
+    }
+
+    function three (array){
+        let lastIndexOfArray = array.length -1;
+        return array[lastIndexOfArray];
+    }
+
+    console.log("New functions below...");
+
+    console.log(one(names));
+    console.log(two(names));
+    console.log(three(names));
 
 })();
 
@@ -152,11 +155,11 @@
 
 //*** END NOTES ***
 
-let ages = [19, 23, 27, 31];
-
-for(let i = 0; i <= ages.length - 1; i++) {
-    console.log(ages[i] * 2);
-}
+// let ages = [19, 23, 27, 31];
+//
+// for(let i = 0; i <= ages.length - 1; i++) {
+//     console.log(ages[i] * 2);
+// }
 //remember! In this case of using a loop to modify the elements of an array
 //you must use i as the element in the array when calling
 //in order to get the loop to cycle through the positions of the array.

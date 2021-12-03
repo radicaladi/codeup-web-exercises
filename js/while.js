@@ -22,7 +22,7 @@ var allCones = Math.floor(Math.random() * 50) + 50; //code to generate random nu
 
 // let i = 0;
 //
-console.log(allCones + " Number of cones to sell today.");
+console.log(allCones + " is the number of cones to sell today.");
 //
 // do {
 //     let conesSold = Math.floor(Math.random() * 5) + 1 //code to generate random number 1-5.

@@ -44,7 +44,7 @@
      */
 
     names.forEach(function (names){
-        console.log("A name of a WWF legend: " + names);
+        console.log("A name of a WCW legend: " + names);
     });
 
     /**

@@ -204,7 +204,7 @@
         }
     }
 
-    books.push(createBook("One Piece", "Eiichiro", "Oda"));
+    const newBook = (createBook("One Piece", "Eiichiro", "Oda"));
     console.log(books);
 
 })();

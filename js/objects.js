@@ -65,12 +65,13 @@
     // console.log(shoppers);
 
     shoppers.forEach(shopper => {
-        console.log(shopper.name + " your total before discount, " + shopper.amount);
+        console.log(shopper.name + " your total before discount, " + "$" + shopper.amount.toFixed(2));
         if (shopper.amount > 200) {
             var total = shopper.amount - (shopper.amount * .12);
-            console.log(shopper.name + " your total after is, " + total);
+            console.log(shopper.name + "your discount is, " + "$" + (shopper.amount.toFixed(2) * .12));
+            console.log(shopper.name + " your total after is, " + "$" + total.toFixed(2));
         } else {
-            console.log(shopper.name + " no discount for you, your total is, " + shopper.amount);
+            console.log(shopper.name + " no discount for you, your total is, " + "$" + shopper.amount.toFixed(2));
         }
     })
 
@@ -88,6 +89,31 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    // let manga = [
+    //     {name: "Naruto", author: {
+    //             firstName: "Musashi", lastName: "Kishimoto"
+    //         }
+    //     },
+    //     {name: "Bleach", author: {
+    //             firstName: "Tite", lastName: "Kubo"
+    //         }
+    //     },
+    //     {name: "Dragonball", author: {
+    //             firstName: "Akira", lastName: "Toriyama"
+    //         }
+    //     },
+    //     {name: "Blue Lock", author: {
+    //             firstName: "Yusuke", lastName: "Nomura"
+    //         }
+    //     },
+    //     {name: "Demon Slayer", author: {
+    //             firstName: "Koyoharu", lastName: "Gotouge"
+    //         }
+    //     },
+    // ]
+    //
+    // console.log(manga);
 
     //function to create an object of 'author' with properties first and last name
     function createAuthor(firstName, lastName) {
@@ -110,7 +136,7 @@
 
     //an array of books, stored in variable 'books', that call on (author) objects from an array stored in another variable.
     let books = [
-        {Title: 'Carrie', author: collectionOfAuthors[0]},
+        {title: 'Carrie', author: collectionOfAuthors[0]},
         {title: 'Alex Cross', author: collectionOfAuthors[1]},
         {title: 'The Hobbit', author: collectionOfAuthors[2]},
         {title: 'A Game of Thrones', author: collectionOfAuthors[3]},
@@ -118,6 +144,7 @@
     ]
 
     console.log(books);
+    console.log("--------");
 
     /**
      * TODO:
@@ -145,9 +172,10 @@
      */
 
     books.forEach((book, index) => {
-        console.log(index);
-        console.log('title: ' + book.title);
-        console.log('author: ' + book.author.firstName + " " + book.author.lastName)
+        console.log("Book " + (index + 1));
+        console.log('Title: ' + book.title);
+        console.log('Author: ' + book.author.firstName + " " + book.author.lastName)
+        console.log("-----")
     })
 
     /**
@@ -161,7 +189,23 @@
      *   `showBookInfo` function.
      */
 
-    //I used a createBook function to solve the above TODOs.
+    function createBook (bookTitle, authorFirstName, authorLastName) {
+        let authorObject = {
+            title: bookTitle,
+            author: {
+                firstName: authorFirstName,
+                lastName: authorLastName
+            },
+            showBookInfo: function () {
+                console.log('Title: ' + book.title);
+                console.log('Author: ' + book.author.firstName + " " + book.author.lastName)
+                console.log("-----")
+            }
+        }
+    }
+
+    books.push(createBook("One Piece", "Eiichiro", "Oda"));
+    console.log(books);
 
 })();
 

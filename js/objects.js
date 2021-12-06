@@ -1,4 +1,4 @@
-(function() {
+(function () {
     "use strict";
 
     /**
@@ -112,7 +112,7 @@ let birthdayObject = {
     month: "February",
     day: 29,
     getDetails: function () {
-        return this.month + "," + this.day
+        return this.month + "," + this.day;
     } // an object nested within an object.
 } // pass in the birthdayObject into the person below...
 
@@ -123,11 +123,11 @@ let person = {
 };
 console.log(person);
 
-function createPerson (name) {
+function createPerson(name) {
     return {
         firstname: name,
         greeting: function () {
-            console.log("Hello, my name is " + this.firstname)
+            console.log("Hello, my name is " + this.firstname);
         }
     }
 }
@@ -145,13 +145,50 @@ console.log(personThree);
 // person.birthday = "29, February"; //can assign a property to the object
 // person.isTall = true; //use camelCase for objects in js.
 
+function createDog(breed, color, name) {
+    return {
+        breed: breed,
+        color: color,
+        sex: "M",
+        name: name,
+        isFloofer: false,
+        bark: function (loud) {
+            if (loud) {
+                console.log("Woof! Woof!")
+            } else {
+                console.log("Ruf! Ruf!")
+            }
+        },
+        toString: function () {
+            return this.color[3] + " " + this.breed + "named " + this.name;
+        }
+    }
+}
 
+console.log(createDog('German Shepard', 'Black', 'DogMeat'));
 
-let dog = {
-    breed: "Husky",
-    colors: ['black', 'brown', 'white'],
-    sex: "f",
-    isFloofer: true
-};
+// let dog = {
+//     breed: "Labrador",
+//     colors: ['black', 'brown', 'white', 'chocolate'],
+//     sex: "m",
+//     name: "Simon",
+//     isFloofer: true,
+//     bark: function (loud) {
+//         if (loud) {
+//             console.log("Woof! Woof!")
+//         } else {
+//             console.log("Ruf! Ruf!")
+//         }
+//     },
+//     toString: function () {
+//         return this.color[3] + " " + this.breed + "named " + this.name;
+//     }
+// };
+//
+// console.log(dog);
 
-console.log(dog);
+let collectionOfDogs = [];
+
+collectionOfDogs.push(createDog('German Shepard', 'Black', 'DogMeat'));
+collectionOfDogs.push(createDog('Labrador', 'Chocolate', 'Simon'));
+collectionOfDogs.push(createDog('Mutt', 'Blond', 'Jake'));

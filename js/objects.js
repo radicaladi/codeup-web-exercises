@@ -92,3 +92,66 @@
      */
 
 })();
+
+/** Class exercises
+ * Monday, 6 December 2021
+ * */
+
+// Syntax of an object:
+// let nameOfObject = {}; empty curly braces. <--- This is the preferred way
+// Another way: let nameOfObject = new Object();
+
+//** some examples
+let array = [1, 2, 3, true, false];
+
+
+// if you have all the information in the beginning for an object, do so in the beginning.
+// good common practice.
+
+let birthdayObject = {
+    month: "February",
+    day: 29,
+    getDetails: function () {
+        return this.month + "," + this.day
+    } // an object nested within an object.
+} // pass in the birthdayObject into the person below...
+
+let person = {
+    name: "Clark Kent",
+    birthday: birthdayObject,
+    isTall: true,
+};
+console.log(person);
+
+function createPerson (name) {
+    return {
+        firstname: name,
+        greeting: function () {
+            console.log("Hello, my name is " + this.firstname)
+        }
+    }
+}
+
+let personTwo = createPerson('Bruce');
+let personThree = createPerson('Diana');
+console.log(personTwo);
+console.log(personThree);
+
+//NOTE** You can call specific pieces of information by calling: objectName(dot)attribute(dot)specific data point
+
+// const newPropertyName = "Firstname" //can pass this into the key of the object.
+//
+// person[newPropertyName] = "Clark Kent"; //can enter key-value pairs in objects dirctly.
+// person.birthday = "29, February"; //can assign a property to the object
+// person.isTall = true; //use camelCase for objects in js.
+
+
+
+let dog = {
+    breed: "Husky",
+    colors: ['black', 'brown', 'white'],
+    sex: "f",
+    isFloofer: true
+};
+
+console.log(dog);

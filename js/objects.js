@@ -12,6 +12,14 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    // let person = {
+    //     firstName: "Adrian",
+    //     lastName: "Brown",
+    // }
+    //
+    // console.log(person.firstName);
+    // console.log(person.lastName);
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,6 +29,16 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+    // let person = {
+    //     firstName: "Adrian",
+    //     lastName: "Brown",
+    //     sayhello: function () {
+    //         return "Hello from " + this.firstName + " " + this.lastName + "!";
+    //     }
+    // }
+    //
+    // console.log(person.sayhello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -36,11 +54,26 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    // if amount > 200 {return cost = amount * .12}
+
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    // console.log(shoppers);
+
+    shoppers.forEach(shopper => {
+        console.log(shopper.name + " your total before discount, " + shopper.amount);
+            if (shopper.amount > 200) {
+                var total = shopper.amount - (shopper.amount * .12);
+                console.log(shopper.name + " your total after is, " + total);
+            } else
+            {console.log(shopper.name + " no discount for you, your total is, " + shopper.amount);
+            }
+    })
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,6 +87,7 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
 
     /**
      * TODO:
@@ -102,40 +136,40 @@
 // Another way: let nameOfObject = new Object();
 
 //** some examples
-let array = [1, 2, 3, true, false];
+// let array = [1, 2, 3, true, false];
 
 
 // if you have all the information in the beginning for an object, do so in the beginning.
 // good common practice.
 
-let birthdayObject = {
-    month: "February",
-    day: 29,
-    getDetails: function () {
-        return this.month + "," + this.day;
-    } // an object nested within an object.
-} // pass in the birthdayObject into the person below...
+// let birthdayObject = {
+//     month: "February",
+//     day: 29,
+//     getDetails: function () {
+//         return this.month + "," + this.day;
+//     } // an object nested within an object.
+// } // pass in the birthdayObject into the person below...
 
-let person = {
-    name: "Clark Kent",
-    birthday: birthdayObject,
-    isTall: true,
-};
-console.log(person);
-
-function createPerson(name) {
-    return {
-        firstname: name,
-        greeting: function () {
-            console.log("Hello, my name is " + this.firstname);
-        }
-    }
-}
-
-let personTwo = createPerson('Bruce');
-let personThree = createPerson('Diana');
-console.log(personTwo);
-console.log(personThree);
+// let person = {
+//     name: "Clark Kent",
+//     birthday: birthdayObject,
+//     isTall: true,
+// };
+// console.log(person);
+//
+// function createPerson(name) {
+//     return {
+//         firstname: name,
+//         greeting: function () {
+//             console.log("Hello, my name is " + this.firstname);
+//         }
+//     }
+// }
+//
+// let personTwo = createPerson('Bruce');
+// let personThree = createPerson('Diana');
+// console.log(personTwo);
+// console.log(personThree);
 
 //NOTE** You can call specific pieces of information by calling: objectName(dot)attribute(dot)specific data point
 
@@ -145,27 +179,27 @@ console.log(personThree);
 // person.birthday = "29, February"; //can assign a property to the object
 // person.isTall = true; //use camelCase for objects in js.
 
-function createDog(breed, color, name) {
-    return {
-        breed: breed,
-        color: color,
-        sex: "M",
-        name: name,
-        isFloofer: false,
-        bark: function (loud) {
-            if (loud) {
-                console.log("Woof! Woof!")
-            } else {
-                console.log("Ruf! Ruf!")
-            }
-        },
-        toString: function () {
-            return this.color[3] + " " + this.breed + "named " + this.name;
-        }
-    }
-}
-
-console.log(createDog('German Shepard', 'Black', 'DogMeat'));
+// function createDog(breed, color, name) {
+//     return {
+//         breed: breed,
+//         color: color,
+//         sex: "M",
+//         name: name,
+//         isFloofer: false,
+//         bark: function (loud) {
+//             if (loud) {
+//                 console.log("Woof! Woof!")
+//             } else {
+//                 console.log("Ruf! Ruf!")
+//             }
+//         },
+//         toString: function () {
+//             return this.color[3] + " " + this.breed + "named " + this.name;
+//         }
+//     }
+// }
+//
+// console.log(createDog('German Shepard', 'Black', 'DogMeat'));
 
 // let dog = {
 //     breed: "Labrador",
@@ -187,8 +221,8 @@ console.log(createDog('German Shepard', 'Black', 'DogMeat'));
 //
 // console.log(dog);
 
-let collectionOfDogs = [];
-
-collectionOfDogs.push(createDog('German Shepard', 'Black', 'DogMeat'));
-collectionOfDogs.push(createDog('Labrador', 'Chocolate', 'Simon'));
-collectionOfDogs.push(createDog('Mutt', 'Blond', 'Jake'));
+// let collectionOfDogs = [];
+//
+// collectionOfDogs.push(createDog('German Shepard', 'Black', 'DogMeat'));
+// collectionOfDogs.push(createDog('Labrador', 'Chocolate', 'Simon'));
+// collectionOfDogs.push(createDog('Mutt', 'Blond', 'Jake'));

@@ -54,26 +54,27 @@
      * and console.log the relevant messages for each person
      */
 
-    // if amount > 200 {return cost = amount * .12}
+        // if amount > 200 {return cost = amount * .12}
 
     var shoppers = [
-        {name: 'Cameron', amount: 180},
-        {name: 'Ryan', amount: 250},
-        {name: 'George', amount: 320}
-    ];
+            {name: 'Cameron', amount: 180},
+            {name: 'Ryan', amount: 250},
+            {name: 'George', amount: 320}
+        ];
 
     // console.log(shoppers);
 
     shoppers.forEach(shopper => {
         console.log(shopper.name + " your total before discount, " + shopper.amount);
-            if (shopper.amount > 200) {
-                var total = shopper.amount - (shopper.amount * .12);
-                console.log(shopper.name + " your total after is, " + total);
-            } else
-            {console.log(shopper.name + " no discount for you, your total is, " + shopper.amount);
-            }
+        if (shopper.amount > 200) {
+            var total = shopper.amount - (shopper.amount * .12);
+            console.log(shopper.name + " your total after is, " + total);
+        } else {
+            console.log(shopper.name + " no discount for you, your total is, " + shopper.amount);
+        }
     })
 
+    console.log("-----");
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -88,6 +89,35 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    //function to create an object of 'author' with properties first and last name
+    function createAuthor(firstName, lastName) {
+        return {
+            firstName: firstName,
+            lastName: lastName,
+        }
+    }
+
+    //an array of author objects stored in a variable
+    let collectionOfAuthors = [];
+
+    collectionOfAuthors.push(createAuthor('Steven', 'King'));
+    collectionOfAuthors.push(createAuthor('James', 'Patterson'));
+    collectionOfAuthors.push(createAuthor('John', 'Tolkien'));
+    collectionOfAuthors.push(createAuthor('George', 'Martin'));
+    collectionOfAuthors.push(createAuthor('Joanne', 'Rowling'));
+
+    console.log(collectionOfAuthors);
+
+    //an array of books, stored in variable 'books', that call on (author) objects from an array stored in another variable.
+    let books = [
+        {Title: 'Carrie', author: collectionOfAuthors[0]},
+        {title: 'Alex Cross', author: collectionOfAuthors[1]},
+        {title: 'The Hobbit', author: collectionOfAuthors[2]},
+        {title: 'A Game of Thrones', author: collectionOfAuthors[3]},
+        {title: 'Harry Potter', author: collectionOfAuthors[4]}
+    ]
+
+    console.log(books);
 
     /**
      * TODO:
@@ -114,6 +144,12 @@
      *      ...
      */
 
+    books.forEach((book, index) => {
+        console.log(index);
+        console.log('title: ' + book.title);
+        console.log('author: ' + book.author.firstName + " " + book.author.lastName)
+    })
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -124,6 +160,8 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    //I used a createBook function to solve the above TODOs.
 
 })();
 

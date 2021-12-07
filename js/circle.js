@@ -37,3 +37,30 @@
     console.log("Circle information rounded to the nearest whole number");
     circle.logInfo(true);
 })();
+
+/** Class exercises
+ * Tuesday, 7 December 2021
+ * */
+
+console.log(Math.random());
+
+function getArbitraryNumber (min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function getRandomInt (min, max) {
+    const randomNumber = Math.random() * (max - min) + min
+    console.log("before floor || ceil, ", randomNumber);
+    console.log("after round down, ", Math.floor(randomNumber));
+    console.log("after round up, ", Math.ceil(randomNumber));
+    console.log("after rounding nearest, ", Math.round(randomNumber));
+    return Math.floor(randomNumber);
+}
+
+
+console.log(Math.pow(8, 2)); //this is math.pow to get a value to a power.
+console.log(8 ** 2); //this is shorthand method of coding power of a number.
+
+console.log("the return of pi, ", Math.PI); //will always return pi.
+
+console.log(Math.E); //the base of natural logarithms; like exponential.

@@ -9,26 +9,27 @@
 <main>
 
     <form method="POST" action="https://request-inspector.glitch.me">
-        <label for="username" name="username">Username</label>
+        <label for="username">Username</label>
         <input id="username" name="username" type="text">
         <br>
 
-        <label for="password" name="password">Password</label>
+        <label for="password">Password</label>
         <input id="password" name="password" type="password">
         <br>
 
-        <label for="confirmPassword" name="confirmPassword">Confirm Password</label>
+        <label for="confirmPassword">Confirm Password</label>
         <input id="confirmPassword" name="confirmPassword" type="password">
         <br>
         <br>
 
-        <label for="bio" name="bio">Bio</label>
+        <label for="bio">Bio</label>
         <br>
-        <textarea id="bio" name="bio" placeholder="A short description of you." maxlength="280" rows="10" cols="25"></textarea>
+        <textarea id="bio" name="bio" placeholder="A short description of you." maxlength="280" rows="10"
+                  cols="25"></textarea>
         <br>
         <br>
 
-        <label for="heardAboutUs" name="howTheyFoundUs">How did you hear about us?</label>
+        <label for="heardAboutUs">How did you hear about us?</label>
         <br>
         billboard <input multiple id="heardAboutUs" name="heardAboutUs" type="radio" value="billboard">
         radio advertisement <input multiple id="heardAboutUs" name="wordToEar" type="radio" value="radio advertisement">
@@ -37,10 +38,11 @@
         other <input multiple id="heardAboutUs" name="throughEther" type="radio" value="other">
         <br>
         <br>
+
         <!--    different names return the assigned name of attribute to query.
         leaving id attribute off of form input causes issues-->
-<!--    GET form values are assigned to query leaving body empty.
-        POST form values are assigned to body leaving query empty. -->
+        <!--    GET form values are assigned to query leaving body empty.
+                POST form values are assigned to body leaving query empty. -->
 
 
         <label for="browserQ">What browser are you using?</label>

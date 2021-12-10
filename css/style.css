@@ -1,8 +1,48 @@
 /*
 just spacing at the top with these lines
+
+Add a style to add a background image to your background. Search how to manipulate the position, sizing of this background image.
+Add a style to change the table, table cells td and rows tr padding and font sizes.
+Continue experimenting with styles to increase the visual appeal of the page.
 */
 
+body {
+    background-color: #EAEAEA;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
 .fancy-header {
-    color: purple;
+    color: #6E3CBC;
+    font-family: 'Oswald', serif;
+    font-weight: 600;
     text-decoration: underline;
+    text-align: center;
+}
+
+h2 {
+    color: #7267CB;
+    font-family: 'Oswald', serif;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+li {
+    list-style: square;
+}
+
+a:link {
+    color: #7267CB;
+}
+
+a:hover {
+    color: #98BAE7;
+}
+
+a:visited {
+    color: #B8E4F0;
+}
+
+a:active {
+    color: #CD1818;
 }

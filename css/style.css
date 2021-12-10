@@ -1,13 +1,13 @@
 /*
 just spacing at the top with these lines
-
-Add a style to add a background image to your background. Search how to manipulate the position, sizing of this background image.
-Continue experimenting with styles to increase the visual appeal of the page.
 */
 
 body {
     background-color: #EAEAEA;
-    background-image: ;
+    background-image: url("https://www.logolynx.com/images/logolynx/42/42ebb2326c1e1b0515348e7b1a1c9e18.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 5%;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }

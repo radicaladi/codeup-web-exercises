@@ -31,11 +31,17 @@ a {
 }
 .top-nav {
     background: var(--light-bg);
+    position: fixed;
+    width: 100%;
 }
 .nav {
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+.nav-item {
+    display: inline-block;
+    padding: 1.5em;
 }
 .nav-link {
     color: var(--main-link-color);
@@ -47,6 +53,15 @@ a {
 }
 .profile {
     background: var(--light-bg);
+    height: 80px;
+}
+.profile-form {
+    float: right;
+    line-height: 80px;
+}
+.profile-image {
+    position: absolute;
+    top: 220px;
 }
 .btn {
     border: 1px solid var(--main-link-color);

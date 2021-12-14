@@ -1,0 +1,64 @@
+/*
+just some space at the top
+*/
+
+body {
+    margin: 0;
+}
+/*the method to create a box-sizing, border-box*/
+* {
+    box-sizing: border-box;
+}
+
+/*making the anchors inline-block*/
+a {
+    display: inline-block;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: lightgrey;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#logo {
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    padding: .2em;
+}
+
+.nav-item {
+    transition: 250ms;
+    margin: auto;
+}
+
+.nav-item > a {
+    text-decoration: none;
+}
+
+.nav-item > img {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.navbar_content {
+    display: flex;
+}
+
+/*the asterisk is a child indicator of the class preceding it.*/
+/*the greater-than sign is used to target any direct child of a class*/
+.navbar_content > *{
+    align-content: center;
+    padding: 2px 4px;
+    background-color: lightgrey;
+}
+.navbar_content > *:hover {
+    background: cornflowerblue;
+    cursor: pointer;
+    transition: 250ms;
+}

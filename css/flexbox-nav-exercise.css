@@ -24,8 +24,10 @@ nav {
     font-size: 12px;
 }
 
+/*don't need margin auto or align content center as long as the above nav element has justify space-between.*/
+
 #logo {
-    margin: auto;
+    /*margin: auto;*/
     font-family: 'Montserrat', sans-serif;
     font-size: 3em;
     font-weight: bold;
@@ -53,7 +55,7 @@ nav {
 /*the asterisk is a child indicator of the class preceding it.*/
 /*the greater-than sign is used to target any direct child of a class*/
 .navbar_content > *{
-    align-content: center;
+    /*align-content: center;*/
     padding: 2px 4px;
     background-color: lightgrey;
 }

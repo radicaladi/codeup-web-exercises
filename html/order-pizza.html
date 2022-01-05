@@ -148,8 +148,13 @@
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    How Much?
-                                    <!--    //////////     add a drop-down list selector here-->
+                                    <label for="cheeseSelector">How Much?</label>
+                                    <select class="form-control" id="cheeseSelector">
+                                        <option>Light</option>
+                                        <option>Normal</option>
+                                        <option>Extra</option>
+                                        <option>Double</option>
+                                    </select>
                                 </li>
                             </ul>
                         </div>
@@ -161,13 +166,22 @@
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    What Type?
-                                    <!--  //////////       add a drop-down list selector here-->
+                                    <label for="sauceTypeSelector">What Type?</label>
+                                    <select class="form-control" id="sauceTypeSelector">
+                                        <option>Tomato Sauce</option>
+                                        <option>Marinara Sauce</option>
+                                        <option>Barbecue Sauce</option>
+                                        <option>Alfredo Sauce</option>
+                                    </select>
                                 </li>
 
                                 <li class="list-group-item">
-                                    How Much?
-                                    <!--   //////////       add a drop-down list selector here-->
+                                    <label for="sauceAmountSelector">How Much?</label>
+                                    <select class="form-control" id="sauceAmountSelector">
+                                        <option>Light</option>
+                                        <option>Normal</option>
+                                        <option>Extra</option>
+                                    </select>
                                 </li>
                             </ul>
                         </div>
@@ -175,9 +189,10 @@
 
                     <!--   Cheese and Sauce Footer-->
                     <div class="card-footer bg-light border-light text-right">
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" href="#contact">
-                            Next Step >
-                        </button>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" href="#profile">< Previous Step</button>
+                            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" href="#contact">Next Step ></button>
+                        </div>
                     </div>
                 </div>
 
@@ -199,8 +214,16 @@
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    ...
-                                    <!-- //////////     need four list items-->
+                                    <input type="checkbox" aria-label="Checkbox for following text input"> Beef
+                                </li>
+                                <li class="list-group-item">
+                                    <input type="checkbox" aria-label="Checkbox for following text input"> 2
+                                </li>
+                                <li class="list-group-item">
+                                    <input type="checkbox" aria-label="Checkbox for following text input"> 3
+                                </li>
+                                <li class="list-group-item">
+                                    <input type="checkbox" aria-label="Checkbox for following text input"> 4
                                 </li>
                             </ul>
                         </div>
@@ -212,8 +235,16 @@
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    ...
-                                    <!-- //////////      need four list items-->
+                                    <input type="checkbox" aria-label="Checkbox for following text input"> Green Peppers
+                                </li>
+                                <li class="list-group-item">
+                                    <input type="checkbox" aria-label="Checkbox for following text input"> 2
+                                </li>
+                                <li class="list-group-item">
+                                    <input type="checkbox" aria-label="Checkbox for following text input"> 3
+                                </li>
+                                <li class="list-group-item">
+                                    <input type="checkbox" aria-label="Checkbox for following text input"> 4
                                 </li>
                             </ul>
                         </div>
@@ -221,16 +252,17 @@
 
                     <!--   Toppings Footer-->
                     <div class="card-footer bg-light border-light text-right">
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" href="#contact">
-                            Next Step >
-                        </button>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" href="#profile">< Previous Step</button>
+                            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" href="#contact">Checkout <!--needs cart logo--></button>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-        </div> <!-- Tab Content End -->
+            </div> <!-- toppings content end-->
+        </div> <!-- Tab Content End-->
 
-    </div> <!-- TAB SECTION END -->
+    </div> <!-- TAB SECTION END-->
 
 
 </div> <!-- DIV.CONTAINER CLOSING TAG -->

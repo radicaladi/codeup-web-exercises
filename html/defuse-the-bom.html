@@ -7,7 +7,7 @@
 
 <body>
 
-<h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
+<h2 id="message">This BOM will self-destruct in <span id="timer">5</span> seconds...</h2>
 <button id="defuser">Defuse the BOM</button>
 
 <script>
@@ -15,9 +15,10 @@
         "use strict";
 
         var detonationTimer = 5;
+        var detonationInterval = 1000; //this is in milliseconds
 
         // TODO: This function needs to be called once every second
-        function updateTimer() {
+        var intervalId = setInterval(function updateTimer() {
             if (detonationTimer == 0) {
                 alert('EXTERMINATE!');
                 document.body.innerHTML = '';
@@ -26,12 +27,13 @@
             }
 
             detonationTimer--;
-        }
+        }, detonationInterval); // <--- () from setInterval
 
         // TODO: When this function runs, it needs to
         // cancel the interval/timeout for updateTimer()
         function defuseTheBOM() {
-
+            clearInterval(intervalId); //stops the interval.... 'defuses the bom'
+           return alert("You defused the bom!");
         }
 
         // Don't modify anything below this line!

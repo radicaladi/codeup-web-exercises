@@ -29,13 +29,14 @@
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        var mainHeader = document.getElementById(main-header);
+        var mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool!";
+        // mainHeader.innerHTML = "JavaScript is Cool!";
+        mainHeader.textContent = "JavaScript is Cool!"; // another way to do the above without the 'XSS' vulnerability risk.
 
         // TODO: Uncomment the next line and get the sub header element by id
-        var subHeader = document.getElementById(sub-header);
+        var subHeader = document.getElementById("sub-header");  // <--- the parenthesis requires quotes for the id, class, tag etc.
 
         // TODO: Set the text color of subHeader to blue
         subHeader.style.color = "#0000FF";

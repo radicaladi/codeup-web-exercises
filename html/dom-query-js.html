@@ -48,17 +48,18 @@
         for (let i = 0; i < listItems.length; i++) {
             let dbId = listItems[i].getAttribute("data-dbid");
             if (dbId % 2 === 0) {
-                listItems[i].setAttribute("style", "color: grey");
+                listItems[i].setAttribute("style", "color: #d3d3d3");
             }
         }
 
         // TODO: Set text color of li with dbid = 1 to blue
-       listItems[0].style.color = "blue";
+       listItems[0].style.color = "#0000FF";
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+        var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs[0].textContent = "Mission Accomplished!"
     })();
 </script>
 </body>

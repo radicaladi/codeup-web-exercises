@@ -50,24 +50,25 @@
         var listItems = document.getElementsByTagName("li");
 
         // TODO: Set text color on every other list item to grey
-        for (let i = 0; i < listItems.length; i++) {
-            let dbId = listItems[i].getAttribute("data-dbid");
-            if (dbId % 2 === 0) {
-                listItems[i].setAttribute("style", "color: #d3d3d3");
-            }
-        }
+        // or (let i = 0; i < listItems.length; i++) {
+        //     let dbId = listItems[i].getAttribute("data-dbid");
+        //     if (dbId % 2 === 0) {
+        //         listItems[i].setAttribute("style", "color: #d3d3d3");
+        //     }
+        // }f
 
         // TODO: Set text color of li with dbid = 1 to blue
         let blueAttribute = document.getElementsByTagName("li")[0]
-        blueAttribute.style.color = "#0000FF"; // Updated answer to reflect what this is looking for.
+        // blueAttribute.style.color = "#0000FF"; // Updated answer to reflect what this is looking for.
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].textContent = "Mission Accomplished!"
+        // subParagraphs[0].textContent = "Mission Accomplished!"
 
         // TODO: Add 4 buttons to the page, add click event listeners to them and have their handlers make the changes to the page in the above actions.
+
         // Button One changes the h1 content...
         var btn1 = document.getElementById("btn1");
 
@@ -76,15 +77,34 @@
         }
         btn1.addEventListener("click", listenerOne)
 
-        // Button Two turns the subHeader blue...
+        // Button Two turns the subHeader and li [0] blue...
         var btn2 = document.getElementById("btn2");
 
         btn2.addEventListener("click", function (event) {
-            subHeader.style.color = "blue";
+            subHeader.style.color = "#0000FF";
+            blueAttribute.style.color = "#0000FF";
         })
 
+        // Button Three changes the color of even numbered list items...
+        var btn3 = document.getElementById("btn3");
 
+        btn3.addEventListener("click", function (event) {
+            for (let i = 0; i < listItems.length; i++) {
+                let dbId = listItems[i].getAttribute("data-dbid");
+                if (dbId % 2 === 0) {
+                    listItems[i].setAttribute("style", "color: #d3d3d3");
+                }
+            }
+        })
 
+        // Button Four completes the mission...
+        var btn4 = document.getElementById("btn4");
+
+        btn4.addEventListener("click", function (event) {
+            subParagraphs[0].textContent = "Mission Accomplished!"
+        })
+
+        // Remove changes...
 
     })();
 </script>

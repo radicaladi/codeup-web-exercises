@@ -33,7 +33,7 @@
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         // mainHeader.innerHTML = "JavaScript is Cool!";
-        mainHeader.textContent = "JavaScript is Cool!"; // another way to do the above without the 'XSS' vulnerability risk.
+        // mainHeader.textContent = "JavaScript is Cool!"; // another way to do the above without the 'XSS' vulnerability risk.
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header");  // <--- the parenthesis requires quotes for the id, class, tag etc.
@@ -53,13 +53,15 @@
         }
 
         // TODO: Set text color of li with dbid = 1 to blue
-       listItems[0].style.color = "#0000FF";
+        let blueAttribute = document.getElementsByTagName("li")[0]
+        blueAttribute.style.color = "#0000FF"; // Updated answer to reflect what this is looking for.
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         subParagraphs[0].textContent = "Mission Accomplished!"
+
     })();
 </script>
 </body>

@@ -25,6 +25,11 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button id="btn1">So cool!</button>
+<button id="btn2">Blue it up</button>
+<button id="btn3">Even only</button>
+<button id="btn4">Celebrate!</button>
+
 <script>
     (function() {
         "use strict";
@@ -39,7 +44,7 @@
         var subHeader = document.getElementById("sub-header");  // <--- the parenthesis requires quotes for the id, class, tag etc.
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "#0000FF";
+        // subHeader.style.color = "#0000FF";
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
@@ -61,6 +66,25 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         subParagraphs[0].textContent = "Mission Accomplished!"
+
+        // TODO: Add 4 buttons to the page, add click event listeners to them and have their handlers make the changes to the page in the above actions.
+        // Button One changes the h1 content...
+        var btn1 = document.getElementById("btn1");
+
+        var listenerOne = function (event) {
+            mainHeader.innerHTML = "JavaScript is so cool!";
+        }
+        btn1.addEventListener("click", listenerOne)
+
+        // Button Two turns the subHeader blue...
+        var btn2 = document.getElementById("btn2");
+
+        btn2.addEventListener("click", function (event) {
+            subHeader.style.color = "blue";
+        })
+
+
+
 
     })();
 </script>

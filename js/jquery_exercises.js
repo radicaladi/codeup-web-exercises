@@ -56,5 +56,9 @@ $('li').css("font-size", "20px");
 // $('li').css("background-color", "rebeccapurple");
 
 //combine highlight h1, p, li...
-$('h1, p, li').css("background-color", "rebeccapurple");
+$( document ).click(function () {
+    $( "h1" ).effect( "highlight" );
+    $( "p" ).effect( "highlight" );
+    $( "li" ).effect( "highlight" );
+})
 alert($('h1').text());

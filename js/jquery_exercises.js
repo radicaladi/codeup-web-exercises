@@ -34,3 +34,9 @@ let loginStatus = user1.isLoggedIn;
 if(loginStatus === true){
     $('#heading').addClass('border');
 }
+
+//changing two css properties on one element...
+$("#p-one").css({"color": "red", "font-size": "12px"})
+
+//multiple elements with css
+$("p, ul, li").css("border", "4px solid blue");

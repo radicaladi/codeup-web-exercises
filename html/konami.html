@@ -30,5 +30,57 @@
 
 
 <script src="/js/jquery-2.2.4.js"></script>
+<script>
+    $(document).ready(function() {
+        "use strict";
+
+        $(document).keyup(function(event){
+            console.log(event.keyCode);
+            if (event.keyCode === 38) {
+                $(document).keyup(function (event) {
+                    if (event.keyCode === 38) {
+                        $(document).keyup(function (event) {
+                            if (event.keyCode === 40) {
+                                $(document).keyup(function (event) {
+                                    if (event.keyCode === 40) {
+                                        $(document).keyup(function (event) {
+                                            if (event.keyCode === 37) {
+                                                $(document).keyup(function (event) {
+                                                    if (event.keyCode === 39) {
+                                                        $(document).keydown(function (event) {
+                                                            if (event.keyCode === 37) {
+                                                                $(document).keyup(function (event) {
+                                                                    if (event.keyCode === 66) {
+                                                                        $(document).keyup(function (event) {
+                                                                            if (event.keyCode === 65) {
+                                                                                $(document).keyup(function (event) {
+                                                                                    if (event.keyCode === 13) {
+                                                                                        alert("You have added 30 lives!");
+                                                                                    }
+                                                                                })
+                                                                            }
+                                                                        })
+                                                                    }
+                                                                })
+                                                            }
+                                                        })
+                                                    }
+                                                })
+                                            }
+                                        })
+                                    }
+                                })
+                            }
+                        })
+                    }
+                })
+            }
+        });
+
+        // cheat code
+        // ↑ ↑ ↓ ↓ ← → ← → b a enter
+
+    }); // document ready function end
+</script>
 </body>
 </html>

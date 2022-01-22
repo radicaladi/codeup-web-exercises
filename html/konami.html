@@ -18,6 +18,9 @@
             padding-top: 23px;
             margin: 0;
         }
+        #hearts {
+            margin-top: 250px;
+        }
     </style>
 </head>
 
@@ -26,6 +29,7 @@
     <h1>
         Konami Code
     </h1>
+    <div id="hearts"></div>
 </div>
 
 
@@ -79,6 +83,26 @@
 
         // cheat code
         // ↑ ↑ ↓ ↓ ← → ← → b a enter
+
+        // Object containing url links to images...
+        const imageUrls = [
+            'https://s.yimg.com/uu/api/res/1.2/fgO1Kl3x0ZTGfKsBwaRJhA--~B/Zmk9ZmlsbDtoPTM1Mzt3PTY3NTthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2021-06/f386aa00-d8d3-11eb-afdd-f6e00353844c.cf.jpg',
+            'https://i02.appmifile.com/images/2018/11/30/9657477f-329b-4699-abd5-483c1afdc577.jpg',
+        ];
+
+        // Function for swapping background...
+        function randomImage(){
+            let size = imageUrls.length;
+            let x = Math.floor(size * Math.random());
+            console.log(x);
+            let element = $(".home-intro");
+            console.log(element);
+            element[0].style["background-image"] = "url("+ imageUrls[x] + ")"; //DOM method
+        }
+
+        // Event for swapping backgrounds on reload...
+        // document.addEventListener("DOMContentLoaded", randomImage); // DOM method
+        $('document').ready(randomImage); // Jquery way
 
     }); // document ready function end
 </script>

@@ -171,6 +171,18 @@
             $("li").last().css("background-color", "palegoldenrod");
         });
 
+        //bold li by clicking any h3
+        $('h3').on("click", function (event) {
+            event.preventDefault();
+            $("li").css("font-weight", "bold");
+        });
+
+        //turn first li of parent ul blue
+        $('li').on("click", function (event) {
+            event.preventDefault();
+            $("ul").children(":nth-child(1)").css("color", "dodgerblue");
+        });
+
     });
 
 </script>

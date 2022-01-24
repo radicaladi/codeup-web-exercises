@@ -61,6 +61,11 @@
                                                                                     if (event.keyCode === 13) {
                                                                                         let musik = new Audio('/assets/sounds/01-contra.mp3');
                                                                                         musik.play();
+                                                                                        let hp = $("#hearts").append("<img id='theImg' src='https://c.tenor.com/NUfwB_Zq-iQAAAAi/game-health-bar-health-bar.gif'/>");
+                                                                                        hp.ready(makeBigger);
+                                                                                        setTimeout(function() {
+                                                                                            hp.ready(makeBigger).fadeOut('slow');
+                                                                                        }, 5500); // <-- time in milliseconds; 5.5 seconds.
                                                                                         alert("You have added 30 lives!");
                                                                                     }
                                                                                 })

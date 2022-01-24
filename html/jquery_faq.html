@@ -168,7 +168,7 @@
         //highlight last li elements
         $("#facts-btn").on("click", function (event) {
             event.preventDefault();
-            $("li").last().css("background-color", "palegoldenrod");
+            $("ul").children(":nth-child(4)").css("background-color", "palegoldenrod");
         });
 
         //bold li by clicking any h3

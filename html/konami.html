@@ -59,6 +59,8 @@
                                                                             if (event.keyCode === 65) {
                                                                                 $(document).keyup(function (event) {
                                                                                     if (event.keyCode === 13) {
+                                                                                        let musik = new Audio('/assets/sounds/01-contra.mp3');
+                                                                                        musik.play();
                                                                                         alert("You have added 30 lives!");
                                                                                     }
                                                                                 })
@@ -83,6 +85,15 @@
 
         // cheat code
         // ↑ ↑ ↓ ↓ ← → ← → b a enter
+
+        // function for hearts...
+        function makeBigger() {
+            $(this).css("transform", "scale(2, 2)");
+            $(this).css("transition", "1s");
+        }
+        // setTimeout(function() {
+        //     $('#hearts').fadeOut('fast');
+        // }, 4000); // <-- time in milliseconds
 
         // Object containing url links to images...
         const imageUrls = [

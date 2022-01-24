@@ -138,11 +138,12 @@
     <li>
         The Grand Canyon has an estimated 1,000 caves, and of those, 335 have been recorded. Even fewer have been mapped or inventoried. Today, only one cave is open to the public -- <span>the Cave of the Domes on Horseshoe Mesa</span>.
     </li>
-    <li>
+    <li class="last">
         Visiting the North Rim and South Rim in the same day may be harder than you think. To drive between them through the park, over the Colorado River and loop around the canyon, you have to travel 215 miles or about <em>5 hours</em>.
     </li>
 </ul>
 
+<button id="facts-btn">Fire for Effect</button>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -162,6 +163,12 @@
         $("dt").click(function (event) {
             event.preventDefault();
             $(this).css("background-color", "highlight");
+        });
+
+        //highlight last li elements
+        $("#facts-btn").on("click", function (event) {
+            event.preventDefault();
+            $("li").last().css("background-color", "palegoldenrod");
         });
 
     });

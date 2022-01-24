@@ -94,11 +94,16 @@
     $(document).ready(function () {
         "use strict";
 
-        // $(".invisible").css("visibility", "hidden"); //give css visibility property
-
+        //visibility functionality of dd delements
         $('#reveal-content').click(function(event) {
             event.preventDefault();
             $('dd').toggleClass('invisible');
+        });
+
+        // highlights dt elements
+        $("dt").click(function (event) {
+            event.preventDefault();
+            $(this).css("background-color", "highlight");
         });
 
     });

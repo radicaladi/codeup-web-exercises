@@ -27,6 +27,29 @@
         }
         li {
             margin-bottom: 0.5em;
+            color: #505050;
+        }
+        .picture-container {
+            max-width: 100vw;
+            margin: 0;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-evenly;
+        }
+        .picture-frame {
+            display: flex;
+            flex-direction: column;
+            margin: 1em;
+            align-items: center;
+            padding: 1em;
+        }
+        img {
+           height: 300px;
+            width: 400px;
+            margin: 0;
+        }
+        button {
+            margin: 1em 0 0;
         }
     </style>
 </head>
@@ -145,6 +168,24 @@
 
 <button id="facts-btn">Fire for Effect</button>
 
+<div class="picture-container">
+    <div id="jTree" class="picture-frame">
+        <img src="https://www.gannett-cdn.com/-mm-/59d705841699e754ad99b36994975acfb33e44cd/c=0-575-5753-3825/local/-/media/2016/06/24/USATODAY/USATODAY/636023819037678666-Joshua-Tree-NP-Manish-Mamtani-STE.jpg?width=1320&height=746&fit=crop&format=pjpg&auto=webp"
+                alt="joshua tree landscape">
+        <button>swap</button>
+    </div>
+    <div class="picture-frame">
+        <img id="gDune" src="https://www.worldatlas.com/r/w1300-q80/upload/b5/f9/8a/shutterstock-761176600.jpg"
+             alt="great sand dunes landscape">
+        <button>swap</button>
+    </div>
+    <div class="picture-frame">
+        <img id="gCan" src="https://www.worldatlas.com/r/w1300-q80/upload/e4/3a/a6/shutterstock-97706066.jpg"
+             alt="grand canyon landscape">
+        <button>swap</button>
+    </div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="/js/jquery-2.2.4.js"></script>
@@ -182,6 +223,12 @@
             event.preventDefault();
             $("ul").children(":nth-child(1)").css("color", "dodgerblue");
         });
+
+        //traversing frames
+            //The left frame swaps to the right and takes the image from the frame in the center.
+            //The center frame swaps randomly to either the left or right.
+            //The right frame swaps to the left and takes the image from the frame in the center.
+
 
     });
 

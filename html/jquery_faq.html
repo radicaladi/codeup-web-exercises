@@ -39,13 +39,23 @@
         .picture-frame {
             display: flex;
             flex-direction: column;
-            margin: 1em;
+            margin: 0;
             align-items: center;
             padding: 1em;
         }
-        img {
-           height: 300px;
-            width: 400px;
+        #jTree { background: url("https://www.gannett-cdn.com/-mm-/59d705841699e754ad99b36994975acfb33e44cd/c=0-575-5753-3825/local/-/media/2016/06/24/USATODAY/USATODAY/636023819037678666-Joshua-Tree-NP-Manish-Mamtani-STE.jpg?width=1320&height=746&fit=crop&format=pjpg&auto=webp");
+            height: 400px;
+            width: 450px;
+            margin: 0;
+        }
+        #gDune { background: url("https://www.worldatlas.com/r/w1300-q80/upload/b5/f9/8a/shutterstock-761176600.jpg");
+            height: 400px;
+            width: 450px;
+            margin: 0;
+        }
+        #gCan { background: url("https://www.worldatlas.com/r/w1300-q80/upload/e4/3a/a6/shutterstock-97706066.jpg");
+            height: 400px;
+            width: 450px;
             margin: 0;
         }
         button {
@@ -169,20 +179,19 @@
 <button id="facts-btn">Fire for Effect</button>
 
 <div class="picture-container">
-    <div id="jTree" class="picture-frame">
-        <img src="https://www.gannett-cdn.com/-mm-/59d705841699e754ad99b36994975acfb33e44cd/c=0-575-5753-3825/local/-/media/2016/06/24/USATODAY/USATODAY/636023819037678666-Joshua-Tree-NP-Manish-Mamtani-STE.jpg?width=1320&height=746&fit=crop&format=pjpg&auto=webp"
-                alt="joshua tree landscape">
-        <button>swap</button>
-    </div>
     <div class="picture-frame">
-        <img id="gDune" src="https://www.worldatlas.com/r/w1300-q80/upload/b5/f9/8a/shutterstock-761176600.jpg"
-             alt="great sand dunes landscape">
-        <button>swap</button>
+        <div id="jTree"></div>
+        <button id="btn1">swap</button>
     </div>
+
     <div class="picture-frame">
-        <img id="gCan" src="https://www.worldatlas.com/r/w1300-q80/upload/e4/3a/a6/shutterstock-97706066.jpg"
-             alt="grand canyon landscape">
-        <button>swap</button>
+        <div id="gDune"></div>
+        <button id="btn2">swap</button>
+    </div>
+
+    <div class="picture-frame">
+        <div id="gCan"></div>
+        <button id="btn3">swap</button>
     </div>
 </div>
 
@@ -228,6 +237,34 @@
             //The left frame swaps to the right and takes the image from the frame in the center.
             //The center frame swaps randomly to either the left or right.
             //The right frame swaps to the left and takes the image from the frame in the center.
+        let frame1 = $("#jTree");
+        let frame2 = $("#gDune");
+        let frame3 = $("#gCan");
+        $('#btn1').click(function (event){
+            event.preventDefault();
+            let temp = frame2.css("background");
+            frame2.css("background", frame1.css("background"));
+            frame1.css("background", temp);
+        });
+        $('#btn2').click(function (event){
+            event.preventDefault();
+            let coinFlip = Math.floor(Math.random() * 2);
+            if (coinFlip === 0) {
+                let temp = frame1.css("background");
+                frame1.css("background", frame2.css("background"));
+                frame2.css("background", temp);
+            } else {
+                let temp = frame3.css("background");
+                frame3.css("background", frame2.css("background"));
+                frame2.css("background", temp)
+            }
+        });
+        $('#btn3').click(function (event){
+            event.preventDefault();
+            let temp = frame2.css("background");
+            frame2.css("background", frame3.css("background"));
+            frame3.css("background", temp);
+        });
 
 
     });

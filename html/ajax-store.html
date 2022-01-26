@@ -37,7 +37,7 @@
         //             its contents and fields
         //       HINT: You will want to target #insertProducts for your new HTML elements
 
-        $.ajax('../js/data/inventory.json').done(function (data, status) {
+        let inventory = $.ajax('../js/data/inventory.json').done(function (data, status) {
             console.log(status);
             console.log(data);
             let dataTab = $.parseJSON(JSON.stringify(data));
@@ -51,6 +51,12 @@
                 )
             }); //loop function end.
         }); //ajax function end.
+
+        function reFresh () {
+            return inventory;
+        }
+
+        $('#refresh').on('click', reFresh.reload)
 
     });
 </script>

@@ -21,23 +21,38 @@
     <tbody id="insertProducts"></tbody>
 </table>
 
+<button id="refresh" style="margin-top: 1em">Update Inventory</button>
+
 
 <script src="../js/jquery-2.2.4.js"></script>
 <script>
-    (function() {
+    $(document).ready(function() {
         "use strict";
         // TODO: Create an AJAX GET request for the file under data/inventory.json
-        let inventory = $.ajax('../js/data/inventory.json');
-        console.log(inventory);
+        // let inventory = $.ajax('../js/data/inventory.json');
+        // console.log(inventory);
 
         // TODO: Take the data from inventory.json and append it to the products table
         //       HINT: Your data should come back as a JSON object; use console.log() to inspect
         //             its contents and fields
         //       HINT: You will want to target #insertProducts for your new HTML elements
 
+        $.ajax('../js/data/inventory.json').done(function (data, status) {
+            console.log(status);
+            console.log(data);
+            let dataTab = $.parseJSON(JSON.stringify(data));
+            console.log(dataTab)
+            $.each(dataTab, function (index, value) {
+                $('#insertProducts').append(
+                    '<tr>' + '<td>' + value.title + '</td>' +
+                    '<td>' + value.quantity + '</td>' + '</td>' +
+                    '<td>' + value.price + '</td>' +
+                    '<td>' + value.categories + '</td>' + '</tr>'
+                )
+            }); //loop function end.
+        }); //ajax function end.
 
-
-    })();
+    });
 </script>
 </body>
 </html>

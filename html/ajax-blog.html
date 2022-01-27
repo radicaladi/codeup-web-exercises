@@ -45,6 +45,9 @@
                 visibility: hidden;
             }
         }
+        a {
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -134,7 +137,7 @@
                 $('#posts').append(
                     '<h1>' + value.title + '</h1>',
                     '<p>' + value.content + '</p>',
-                    '<p>' + '<a href="#">' + value.categories + '</a>' + '</p>',
+                    '<p>' + '<a href="#">' + value.categories.join(", ") + '</a>' + '</p>',
                     '<p>' + '<strong>' + value.date + '</strong>' + '</p>'
                 )
             });

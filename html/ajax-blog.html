@@ -31,7 +31,31 @@
 </div>
 
 
+<script>
+    $(document).ready(function () {
+        "use strict";
 
+        //retrieve the information I want
+        $.get("../js/data/blog.json").done(function (data, status) {
+            console.log(status);
+            console.log(data);
+            //now do something with that data
+            //append to posts
+            let blogData = $.parseJSON(JSON.stringify(data));
+            //loop through data and append
+            $.each(blogData, function (item, value) {
+                $('#posts').append(
+                    '<h1>' + value.title + '</h1>',
+                    '<p>' + value.content + '</p>',
+                    '<p>' + '<a href="#">' + value.categories + '</a>' + '</p>',
+                    '<p>' + '<strong>' + value.date + '</strong>' + '</p>'
+                )
+            });
+        });
+
+
+    });
+</script>
 <!--bootstrap scripts-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

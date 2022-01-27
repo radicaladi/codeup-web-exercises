@@ -14,19 +14,106 @@
     <script src="../js/jquery-2.2.4.js"></script>
     <!--    main css-->
     <style>
-        div {
-            border: 1px red solid;
+        /*div {*/
+        /*    border: 1px red solid;*/
+        /*}*/
+        .top-nav > *{
+            padding: 2px 4px;
+            background-color: lightgrey;
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
         }
-
+        .container {
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #posts {
+            margin: 1em 2em;
+        }
+        .media-body {
+            margin: 0.5em 0 1.5em;
+        }
+        .media > h3 {
+            margin-bottom: 1em;
+        }
+        @media screen and (max-width: 769px) {
+            .profile-details {
+                visibility: hidden;
+            }
+            .community {
+                visibility: hidden;
+            }
+        }
     </style>
 </head>
 
 <body>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg bg-dark text-uppercase sticky-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#page-top">Ajax Blog</a>
+        <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#posts">Posts</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <div class="container">
+    <aside class="profile-details" style="position: fixed; left: 10px; top: 90px; width: 270px; background: #FFF">
+        <h3>
+            Elliot Alderson
+            <small class="text-muted">@ajax(blg)</small>
+        </h3>
+
+        <p>Coffee and thrift addict | ¯\_(ツ)_/¯</p>
+
+        <ul class="profile-items">
+            <li class="profile-entry"><a href="#">San Antonio, TX</a></li>
+            <li class="profile-entry"><a href="#">codeup.com</a></li>
+            <li class="text-muted profile-entry">Joined June 2011</li>
+        </ul>
+    </aside>
 
     <main id="posts" style="max-width: calc(100vw - 50%)">
         <!--        JSON appends here-->
     </main>
+
+    <aside class="community" style="position: fixed; right: 15px; top: 90px; background: #FFF">
+        <div class="media">
+            <h3>Community</h3>
+            <img class="media-image img-circle" src="https://randomuser.me/api/portraits/men/25.jpg" alt="Random user">
+            <div class="media-body">
+                <h4>wozgeass
+                    <small class="text-muted">@lelouch_linux</small>
+                </h4>
+            </div>
+        </div>
+        <div class="media">
+            <img class="media-image img-circle" src="https://randomuser.me/api/portraits/women/11.jpg" alt="Random user">
+            <div class="media-body">
+                <h4>Łukasz Gruszka
+                    <small class="text-muted">@lukgru</small>
+                </h4>
+            </div>
+        </div>
+        <div class="media">
+            <img class="media-image img-circle" src="https://randomuser.me/api/portraits/women/31.jpg" alt="Random user">
+            <div class="media-body">
+                <h4>Huertito
+                    <small class="text-muted">@huertitoDA</small>
+                </h4>
+            </div>
+        </div>
+    </aside>
 
 </div>
 
@@ -52,7 +139,6 @@
                 )
             });
         });
-
 
     });
 </script>

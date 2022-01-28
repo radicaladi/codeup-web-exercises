@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+    <meta charset="UTF-8">
+    <title>Mapbox Maps</title>
 
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- Custom CSS -->
+</head>
+
+<body>
+<h1 class="title">
+    My Favorite Restaurant!
+</h1>
+
+<div id='map'>
+    <!-- Mapbox lives here! -->
+</div>
+
+
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Custom JS -->
+<script>
+    <!-- NOTE: MAPBOX LIBRARY HAS NOT BEEN DOWNLOADED LOCAL-->
+    mapboxgl.accessToken = MY_API_TOKEN_HERE;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-98.4916, 29.4252]
+    });
+</script>
 </body>
 </html>

@@ -32,6 +32,9 @@
 <!-- Mapbox Geocoder Util Methods -->
 <script src="../js/mapbox-geocoder-utils.js"></script>
 
+<!-- JQuery script -->
+<script src="../js/jquery-2.2.4.js"></script>
+
 <!-- Custom JS -->
 <script>
     mapboxgl.accessToken = YOUR_API_TOKEN_HERE;
@@ -51,6 +54,11 @@
     var marker = new mapboxgl.Marker()
         .setLngLat([-104.71667292691446, 38.9137122759038])
         .addTo(map);
+
+    var BirdDogBbqPopup = new mapboxgl.Popup()
+        .setHTML("<p>BirdDog BBQ!</p>")
+
+    marker.setPopup(BirdDogBbqPopup)
 </script>
 </body>
 </html>

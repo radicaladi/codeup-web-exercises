@@ -6,6 +6,15 @@
 
     <!-- Mapbox CSS -->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: calc(100vw - 50px);
+            height: calc(100vh - 50px);
+        }
+    </style>
 </head>
 <body>
 
@@ -19,6 +28,9 @@
 
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Mapbox Geocoder Util Methods -->
+<script src="../js/mapbox-geocoder-utils.js"></script>
 
 <!-- Custom JS -->
 <script>

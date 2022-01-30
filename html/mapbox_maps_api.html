@@ -22,10 +22,6 @@
     My Favorite Restaurant!
 </h1>
 
-<select>
-    .
-</select>
-
 <div id='map'>
     <!-- Mapbox lives here! -->
 </div>
@@ -35,10 +31,13 @@
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 
+<!-- Mapbox Geocoder Util Methods -->
+<script src="mapbox-geocoder-utils.js"></script>
+
 <!-- Custom JS -->
 <script>
     <!-- NOTE: MAPBOX LIBRARY HAS NOT BEEN DOWNLOADED LOCAL-->
-    mapboxgl.accessToken = "pk.eyJ1IjoicmFkaWNhbGFkaSIsImEiOiJja3l4aGZ0MTgwaWIxMnV0N2lrbHlxcHdwIn0.DAZ5_eUwXL4R3xFcRDQtVQ";
+    mapboxgl.accessToken = YOUR_API_TOKEN_HERE;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
@@ -46,17 +45,12 @@
         center: [-104.800644, 38.846127]
     });
 
-    function geocode(search, token) {
-        var baseUrl = 'https://api.mapbox.com';
-        var endPoint = '/geocoding/v5/mapbox.places/';
-        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
-            .then(function(res) {
-                return res.json();
-                // to get all the data from the request, comment out the following three lines...
-            }).then(function(data) {
-                return data.features[0].center;
-            });
-    }
+    // the  geocode method from mapbox-geocoder-utils.js
+    geocode("5984 Stetson Hills Blvd #200, Colorado Springs, CO 80923", YOUR_TOKEN_HERE).then(function(result) {
+        console.log(result);
+        map.setCenter(result);
+        map.setZoom(10);
+    });
 </script>
 </body>
 </html>

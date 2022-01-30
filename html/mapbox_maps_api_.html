@@ -37,6 +37,8 @@
 
 <!-- Custom JS -->
 <script>
+    // first part ex.1
+
     mapboxgl.accessToken = YOUR_API_TOKEN_HERE;
     var map = new mapboxgl.Map({
         container: 'map',
@@ -45,20 +47,39 @@
         center: [-104.800644, 38.846127]
     });
 
+    // second part ex.1
+
     geocode("5984 Stetson Hills Blvd #200, Colorado Springs, CO 80923", YOUR_TOKEN_HERE).then(function(result) {
         console.log(result);
         map.setCenter(result);
         map.setZoom(10);
     });
 
+    // third part ex.1
+
     var marker = new mapboxgl.Marker()
         .setLngLat([-104.71667292691446, 38.9137122759038])
         .addTo(map);
+
+    // fourth part ex.1
 
     var BirdDogBbqPopup = new mapboxgl.Popup()
         .setHTML("<p>BirdDog BBQ!</p>")
 
     marker.setPopup(BirdDogBbqPopup)
+
+    // fifth part ex.1
+
+    const favRestaurants = []; // gonna push to this array
+
+    // collection of coordinates
+    const coordinates = [
+        [-104.71667292691446, 38.9137122759038], //birdDog
+        [-117.975330, 34.068970], //inNOut
+        [-104.77489776905155, 38.83348267342714] //mariaS
+    ]
+
+
 </script>
 </body>
 </html>

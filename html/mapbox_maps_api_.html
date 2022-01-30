@@ -14,6 +14,21 @@
             width: calc(100vw - 70px);
             height: calc(100vh - 90px);
         }
+        .marker {
+            background-image: url('https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .mapboxgl-popup {
+            max-width: 200px;
+        }
+        .mapboxgl-popup-content {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
     </style>
 </head>
 <body>
@@ -39,45 +54,155 @@
 <script>
     // first part ex.1
 
-    mapboxgl.accessToken = YOUR_API_TOKEN_HERE;
+    mapboxgl.accessToken = YOURE_TOKEN_HERE;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 8,
+        zoom: 5,
         center: [-104.800644, 38.846127]
     });
 
     // second part ex.1
 
-    geocode("5984 Stetson Hills Blvd #200, Colorado Springs, CO 80923", YOUR_TOKEN_HERE).then(function(result) {
-        console.log(result);
-        map.setCenter(result);
-        map.setZoom(10);
-    });
-
-    // third part ex.1
-
-    var marker = new mapboxgl.Marker()
-        .setLngLat([-104.71667292691446, 38.9137122759038])
-        .addTo(map);
-
-    // fourth part ex.1
-
-    var BirdDogBbqPopup = new mapboxgl.Popup()
-        .setHTML("<p>BirdDog BBQ!</p>")
-
-    marker.setPopup(BirdDogBbqPopup)
+    // geocode("5984 Stetson Hills Blvd #200, Colorado Springs, CO 80923", YOUR_TOKEN_HERE).then(function(result) {
+    //     console.log(result);
+    //     map.setCenter(result);
+    //     map.setZoom(10);
+    // });
+    //
+    // // third part ex.1
+    //
+    // var marker = new mapboxgl.Marker()
+    //     .setLngLat([-104.71667292691446, 38.9137122759038])
+    //     .addTo(map);
+    //
+    // // fourth part ex.1
+    //
+    // var BirdDogBbqPopup = new mapboxgl.Popup()
+    //     .setHTML("<p>BirdDog BBQ!</p>")
+    //
+    // marker.setPopup(BirdDogBbqPopup)
 
     // fifth part ex.1
 
-    const favRestaurants = []; // gonna push to this array
+    const restaurantInfo = {
+        'type': 'FeatureCollection',
+        'features': [
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-104.71667292691446, 38.9137122759038]
+                },
+                'properties': {
+                    'title': 'BirdDog BBQ',
+                    'description': '#1 Favorite Restaurant!'
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-117.975330, 34.068970]
+                },
+                'properties': {
+                    'title': 'In-N-Out Burger',
+                    'description': '#2 Favorite Restaurant!'
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-104.77489776905155, 38.83348267342714]
+                },
+                'properties': {
+                    'title': 'Maria"s Taco Shop',
+                    'description': '#3 Favorite Restaurant!'
+                }
+            }
+        ]
+    };
 
-    // collection of coordinates
-    const coordinates = [
-        [-104.71667292691446, 38.9137122759038], //birdDog
-        [-117.975330, 34.068970], //inNOut
-        [-104.77489776905155, 38.83348267342714] //mariaS
-    ]
+    // add markers to map
+    for (const feature of restaurantInfo.features) {
+    // create HTML element for each feature
+        const el = document.createElement('div');
+        el.className = 'marker';
+
+    // make a marker for each feature and add it to the map
+        new mapboxgl.Marker(el)
+            .setLngLat(feature.geometry.coordinates)
+            .setPopup(
+                new mapboxgl.Popup({ offset: 25 }) // add popups
+                    .setHTML(
+                        `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+                    )
+            )
+            .addTo(map);
+    }
+
+    // my code to try and figure this out myself commented-out below...
+
+    // const favRestaurants = []; // pushing restaurant information to this array
+    //
+    // // collection of coordinates
+    // const coordinates = [
+    //     , //birdDog
+    //     , //inNOut
+    //      //mariaS
+    // ]
+    //
+    // const restaurantInfo = [
+    //     {
+    //         address: "BirdDog BBQ",
+    //         popupHTML: "<p>#1 BirdDog BBQ!</p>"
+    //     },
+    //     {
+    //         address: "In-N-Out Burger",
+    //         popupHTML: "<p>#1 BirdDog BBQ!</p>"
+    //     },
+    //     {
+    //         address: "Maria's Taco Shop",
+    //         popupHTML: "<p>#3 Maria's Taco Shop!</p>"
+    //     },
+    // ]
+    //
+    // for(var itemIndex in coordinates) {
+    //     // push new feature to the collection
+    //     favRestaurants.push({
+    //         "type": "Feature",
+    //         "geometry": {
+    //             "type": "Point",
+    //             "coordinates": coordinates[itemIndex]
+    //         },
+    //         "properties": {
+    //             restaurantInfo
+    //         }
+    //     });
+    // }
+    //
+    // function placeMarkerAndPopup(info, token, map) {
+    //     geocode(info.address, token).then(function(coordinates) {
+    //         var popup = new mapboxgl.Popup()
+    //             .setHTML(info.popupHTML);
+    //         var marker = new mapboxgl.Marker()
+    //             .setLngLat(coordinates)
+    //             .addTo(map)
+    //             .setPopup(popup);
+    //         popup.addTo(map);
+    //     });
+    // }
+    //
+    // placeMarkerAndPopup(restaurantInfo, accessToken, map);
+
+    //********************
+
+    //  !IMPORTANT NOTES:
+    // * USED MAPBOX DOCUMENTATION EXAMPLE TO GENERATE MARKERS.
+    // * DOES MAPBOX USE A SPECIFIC SYNTAX FOR OBJECTS AND KEY-VALUE PAIRS?
+    // * MARKERS NEED CSS STYLING TO POPULATE.
+    // * I'M NOT SURE HOW A FOREACH APPROACH SHOULD WORK.
 
 
 </script>

@@ -41,6 +41,12 @@
         zoom: 10,
         center: [-104.800644, 38.846127]
     });
+
+    geocode("5984 Stetson Hills Blvd #200, Colorado Springs, CO 80923", YOUR_TOKEN_HERE).then(function(result) {
+        console.log(result);
+        map.setCenter(result);
+        map.setZoom(10);
+    });
 </script>
 </body>
 </html>

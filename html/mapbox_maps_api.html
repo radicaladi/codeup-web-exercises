@@ -127,9 +127,6 @@
                 .setLngLat(coordinates)
                 .addTo(map)
                 .setPopup(popup);
-            map.on.forEach("click", () => {
-                popup.addTo(map);
-            });
         });
     }
 

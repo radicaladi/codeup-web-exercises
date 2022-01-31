@@ -34,6 +34,10 @@
             flex-direction: column;
             align-items: center;
         }
+        .btnContainer {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     </style>
 
 </head>
@@ -42,6 +46,16 @@
 <div class="container">
 
     <h1>My Favorite Restaurant</h1>
+
+    <div class="btnContainer">
+<!--    <label for="zoomCon">Zoom Controls</label>-->
+    <select id="zoomCon" name="zoomCon">
+        <option value="Chrome" selected disabled>Zoom</option>
+        <option value="5">5</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+    </select>
+    </div>
 
     <div id='map'>
         <!-- Mapbox populates here! -->
@@ -129,6 +143,12 @@
                 .setPopup(popup);
         });
     }
+
+    // select zoom level
+    $('#zoomCon').change(function () {
+        let value = $('#zoomCon').val()
+        map.setZoom(value)
+    })
 
     // for loop code follows...
 

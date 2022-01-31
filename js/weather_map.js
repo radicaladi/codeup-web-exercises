@@ -10,10 +10,17 @@
 // * using curriculum...
 $.get("https://api.openweathermap.org/data/2.5/weather", {
     APPID: weatherKey,
-    q: "Tucson, US"
+    q: "Tucson, US",
+    units: "imperial"
 }).done(function (data) {
     console.log(data);
+
+    $(".temp").append(`<p>${data.main.temp}</p>`);
+    $(".description").append(`<p>${data.weather}</p>`);
+    $(".humidity").append(`<p>${data.main.humidity}</p>`);
+    $(".wind").append(`<p>${data.wind.speed}</p>`);
 });
+
 
 // function temperatureConverter(valNum) {
 //     valNum = parseFloat(valNum);

@@ -30,6 +30,7 @@
             font-family: 'Open Sans', sans-serif;
         }
     </style>
+
 </head>
 <body>
 
@@ -47,6 +48,9 @@
 <!-- Mapbox Geocoder Util Methods -->
 <script src="../js/mapbox-geocoder-utils.js"></script>
 
+<!-- Mapbox Keys -->
+<script src="../js/keys.js"></script>
+
 <!-- JQuery script -->
 <script src="../js/jquery-2.2.4.js"></script>
 
@@ -54,7 +58,7 @@
 <script>
     // first part ex.1
 
-    mapboxgl.accessToken = YOURE_TOKEN_HERE;
+    mapboxgl.accessToken = mapBoxKey;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
@@ -64,7 +68,7 @@
 
     // second part ex.1
 
-    // geocode("5984 Stetson Hills Blvd #200, Colorado Springs, CO 80923", YOUR_TOKEN_HERE).then(function(result) {
+    // geocode("5984 Stetson Hills Blvd #200, Colorado Springs, CO 80923", mapBoxKey).then(function(result) {
     //     console.log(result);
     //     map.setCenter(result);
     //     map.setZoom(10);
@@ -92,11 +96,13 @@
                 'type': 'Feature',
                 'geometry': {
                     'type': 'Point',
+
                     'coordinates': [-104.71667292691446, 38.9137122759038]
                 },
                 'properties': {
                     'title': 'BirdDog BBQ',
-                    'description': '#1 Favorite Restaurant!'
+                    'rank': '#1 Favorite Restaurant!',
+                    'description': 'The barbecue is glorious! A brisket Doghouse with all 3 sauces is life!'
                 }
             },
             {
@@ -107,7 +113,8 @@
                 },
                 'properties': {
                     'title': 'In-N-Out Burger',
-                    'description': '#2 Favorite Restaurant!'
+                    'rank': '#2 Favorite Restaurant!',
+                    'description': '/has a secret menu/ A four by four animal style is to die for!'
                 }
             },
             {
@@ -118,7 +125,8 @@
                 },
                 'properties': {
                     'title': 'Maria"s Taco Shop',
-                    'description': '#3 Favorite Restaurant!'
+                    'rank': '#3 Favorite Restaurant!',
+                    'description': 'Best Mexican food in the Springs! Delicious asada, horchata, and enchiladas! Oh my!'
                 }
             }
         ]
@@ -136,7 +144,7 @@
             .setPopup(
                 new mapboxgl.Popup({ offset: 25 }) // add popups
                     .setHTML(
-                        `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+                        `<h3>${feature.properties.title}</h3><p>${feature.properties.rank}</p><p>${feature.properties.description}</p>`
                     )
             )
             .addTo(map);

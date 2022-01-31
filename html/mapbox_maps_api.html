@@ -12,7 +12,7 @@
         #map {
             /* the width and height may be set to any size */
             width: calc(100vw - 70px);
-            height: calc(100vh - 90px);
+            height: 85vh;
         }
         .marker {
             background-image: url('https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png');
@@ -97,69 +97,104 @@
     // marker.setPopup(BirdDogBbqPopup)
 
     // fifth part ex.1
+    // refactored using foreach...
 
+    const favRestaurants = [
+        {
+            address: '5984 Stetson Hills Blvd, Ste 200, Colorado Springs, CO 80923',
+            popupHTML: '<h3>BirdDog BBQ</h3><p>#1 Favorite Restaurant!</p><p>The barbecue is glorious! A brisket Doghouse with all 3 sauces is life!</p>'
+        },
+        {
+            address: '13766 Francisquito Ave, Baldwin Park, CA 91706',
+            popupHTML: '<h3>In-N-Out Burger</h3><p>#2 Favorite Restaurant!</p><p>/has a secret menu/ A four by four animal style is to die for!</p>'
+        },
+        {
+            address: '2812 E Pikes Peak Ave, Colorado Springs, CO 80909',
+            popupHTML: '<h3>Maria"s Taco Shop</h3><p>#3 Favorite Restaurant!</p><p>Best Mexican food in the Springs! Delicious asada, horchata, and enchiladas! Oh my!</p>'
+        }
+    ]
 
-
-    const restaurantInfo = {
-        'type': 'FeatureCollection',
-        'features': [
-            {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-
-                    'coordinates': [-104.71667292691446, 38.9137122759038]
-                },
-                'properties': {
-                    'title': 'BirdDog BBQ',
-                    'rank': '#1 Favorite Restaurant!',
-                    'description': 'The barbecue is glorious! A brisket Doghouse with all 3 sauces is life!'
-                }
-            },
-            {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-117.975330, 34.068970]
-                },
-                'properties': {
-                    'title': 'In-N-Out Burger',
-                    'rank': '#2 Favorite Restaurant!',
-                    'description': '/has a secret menu/ A four by four animal style is to die for!'
-                }
-            },
-            {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-104.77489776905155, 38.83348267342714]
-                },
-                'properties': {
-                    'title': 'Maria"s Taco Shop',
-                    'rank': '#3 Favorite Restaurant!',
-                    'description': 'Best Mexican food in the Springs! Delicious asada, horchata, and enchiladas! Oh my!'
-                }
-            }
-        ]
-    };
-
-    // add markers to map
-    for (const feature of restaurantInfo.features) {
-    // create HTML element for each feature
-        const el = document.createElement('div');
-        el.className = 'marker';
-
-    // make a marker for each feature and add it to the map
-        new mapboxgl.Marker(el)
-            .setLngLat(feature.geometry.coordinates)
-            .setPopup(
-                new mapboxgl.Popup({ offset: 25 }) // add popups
-                    .setHTML(
-                        `<h3>${feature.properties.title}</h3><p>${feature.properties.rank}</p><p>${feature.properties.description}</p>`
-                    )
-            )
-            .addTo(map);
+    favRestaurants.forEach((restaurant) => {
+        placeMarkerAndPopup(restaurant, mapboxgl.accessToken, map);
+    });
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function (coordinates) {
+            const el = document.createElement('div');
+            el.className = 'marker';
+            var popup = new mapboxgl.Popup({ offset: 25 })
+                .setHTML(info.popupHTML);
+            var marker = new mapboxgl.Marker(el)
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+            map.on.forEach("click", () => {
+                popup.addTo(map);
+            });
+        });
     }
+
+    // for loop code follows...
+
+    // const restaurantInfo = {
+    //     'type': 'FeatureCollection',
+    //     'features': [
+    //         {
+    //             'type': 'Feature',
+    //             'geometry': {
+    //                 'type': 'Point',
+    //
+    //                 'coordinates': [-104.71667292691446, 38.9137122759038]
+    //             },
+    //             'properties': {
+    //                 'title': 'BirdDog BBQ',
+    //                 'rank': '#1 Favorite Restaurant!',
+    //                 'description': 'The barbecue is glorious! A brisket Doghouse with all 3 sauces is life!'
+    //             }
+    //         },
+    //         {
+    //             'type': 'Feature',
+    //             'geometry': {
+    //                 'type': 'Point',
+    //                 'coordinates': [-117.975330, 34.068970]
+    //             },
+    //             'properties': {
+    //                 'title': 'In-N-Out Burger',
+    //                 'rank': '#2 Favorite Restaurant!',
+    //                 'description': '/has a secret menu/ A four by four animal style is to die for!'
+    //             }
+    //         },
+    //         {
+    //             'type': 'Feature',
+    //             'geometry': {
+    //                 'type': 'Point',
+    //                 'coordinates': [-104.77489776905155, 38.83348267342714]
+    //             },
+    //             'properties': {
+    //                 'title': 'Maria"s Taco Shop',
+    //                 'rank': '#3 Favorite Restaurant!',
+    //                 'description': 'Best Mexican food in the Springs! Delicious asada, horchata, and enchiladas! Oh my!'
+    //             }
+    //         }
+    //     ]
+    // };
+    //
+    // // add markers to map
+    // for (const feature of restaurantInfo.features) {
+    // // create HTML element for each feature
+    //     const el = document.createElement('div');
+    //     el.className = 'marker';
+    //
+    // // make a marker for each feature and add it to the map
+    //     new mapboxgl.Marker(el)
+    //         .setLngLat(feature.geometry.coordinates)
+    //         .setPopup(
+    //             new mapboxgl.Popup({ offset: 25 }) // add popups
+    //                 .setHTML(
+    //                     `<h3>${feature.properties.title}</h3><p>${feature.properties.rank}</p><p>${feature.properties.description}</p>`
+    //                 )
+    //         )
+    //         .addTo(map);
+    // }
 
 
     //********************
@@ -168,7 +203,8 @@
     // * USED MAPBOX DOCUMENTATION EXAMPLE TO GENERATE MARKERS.
     // * DOES MAPBOX USE A SPECIFIC SYNTAX FOR OBJECTS AND KEY-VALUE PAIRS?
     // * MARKERS NEED CSS STYLING TO POPULATE.
-    // * I'M NOT SURE HOW A FOREACH APPROACH SHOULD WORK.
+    // * I'M NOT SURE HOW A FOREACH APPROACH SHOULD WORK. ✅
+    // * REFACTORED CODE FOR FOREACH ✅
 
 
 </script>

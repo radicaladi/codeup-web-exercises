@@ -1,51 +1,66 @@
-"use strict";
-
-// * using this kind of call...
-// $.get(`http://api.openweathermap.org/data/2.5/weather?lat=${33.748783}&lon=${-84.388168}&appid=${weatherKey}`).done(function (weather) {
-//     console.log(weather);
-//
-//     $(".container").append(`<p>${weather.main.humidity}</p>`);
-// })
-
-// * using curriculum...
-// $.get("https://api.openweathermap.org/data/2.5/weather", {
-//     APPID: weatherKey,
-//     q: "Tucson, US",
-//     units: "imperial"
-// }).done(function (data) {
-//     console.log(data);
-//
-//     $(".temp").append(`<p>${data.main.temp}</p>`);
-//     $(".description").append(`<p>${data.weather}</p>`);
-//     $(".humidity").append(`<p>${data.main.humidity}</p>`);
-//     $(".wind").append(`<p>${data.wind.speed}</p>`);
-// });
-
-// * 5 day forecast...
-// $.get("http://api.openweathermap.org/data/2.5/forecast", {
-//     APPID: weatherKey,
-//     q:   "Tucson, US",
-//     units: "imperial"
-// }).done(function(data) {
-//     console.log('5 day forecast', data.list[0]);
-//     for (let i = 0; i < data.list.length; i++){
-//         console.log(data.list[i]);
-//     }
-//
-// });
-
 // test location weather: -110.99, 32.32
 
-// * mapbox map...
+// *** MAPBOX SECTION ***
 mapboxgl.accessToken = mapBoxKey;
-var map = new mapboxgl.Map({
+const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
     zoom: 3,
     center: [-110.9747, 32.2226]
 });
 
+
+// *** OPEN WEATHER SECTION ***
+
 function init () {
     document.getElementById('btnGet').addEventListener('click', getWeather);
     document.getElementById('btnCurrent').addEventListener('click', getLocation);
 }
+
+// <div className="col">
+//     <div className="card" style="width: 30vw">
+//         <h5 id="city" className="card-title p-2">City</h5>
+//         <h6 id="date" className="card-title p-3">Date</h6>
+//         <img
+//             src="http://openweathermap.org/img/wn/10d@4x.png"
+//             className="card-img-top"
+//             alt="Weather description"
+//         />
+//         <div className="card-body">
+//             <h3 className="card-title">Weather Label</h3>
+//             <p className="card-text">High Temp Low Temp</p>
+//             <p className="card-text">HighFeels like</p>
+//             <p className="card-text">Pressure</p>
+//             <p className="card-text">Precipitation</p>
+//             <p className="card-text">Wind speed and direction</p>
+//         </div>
+//     </div>
+// </div>
+function getWeather () {
+    let lat = document.getElementById('latitude').value;
+    let lon = document.getElementById('longitude').value;
+    let key = weatherKey;
+    let lang = 'en';
+    let units = 'imperial';
+    $.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=${units}&lang=${lang}`).done(function (data) {
+        var tageForecast = [];
+        for (let i = 0; i < data.list.length; i += 8) {
+            tageForecast.push(data.list[i]);
+        }
+    });
+}
+
+function getLocation () {
+    let options = {
+        enableHighAccuracy: true,
+        timeout: 1000 * 10, //10s
+        maximumAge: 1000 * 60 * 5, //5min
+    };
+    navigator.geolocation.getCurrentPosition(success, fail, options);
+}
+function success () {
+}
+function fail () {
+}
+
+init(); //makes form field and buttons work

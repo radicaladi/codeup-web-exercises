@@ -55,6 +55,7 @@
         <option value="15">15</option>
         <option value="20">20</option>
     </select>
+        <button id="hide">Hide Markers</button>
     </div>
 
     <div id='map'>
@@ -148,6 +149,14 @@
     $('#zoomCon').change(function () {
         let value = $('#zoomCon').val()
         map.setZoom(value)
+    })
+
+    // hide markers toggle
+    let allMarkers = [];
+    $('#hide').click(function () {
+        allMarkers.forEach(function (marker) {
+            marker.toggle();
+        })
     })
 
     // for loop code follows...

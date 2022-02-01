@@ -43,9 +43,9 @@ function getWeather () {
     let lang = 'en';
     let units = 'imperial';
     $.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=${units}&lang=${lang}`).done(function (data) {
-        var tageForecast = [];
+        var fivedays = [];
         for (let i = 0; i < data.list.length; i += 8) {
-            tageForecast.push(data.list[i]);
+            fivedays.push(data.list[i]);
         }
     });
 }
@@ -59,8 +59,10 @@ function getLocation () {
     navigator.geolocation.getCurrentPosition(success, fail, options);
 }
 function success () {
+    console.log("cool")
 }
 function fail () {
+    console.log("went wrong")
 }
 
 init(); //makes form field and buttons work

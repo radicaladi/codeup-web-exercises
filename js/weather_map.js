@@ -19,7 +19,7 @@ $(document).ready(function () {
         zoom: 10,
         center: [homeLng, homeLat]
     });
-    // Set marker options.
+    // make marker with options.
     const marker = new mapboxgl.Marker({
         draggable: true
     }).setLngLat([homeLng, homeLat])

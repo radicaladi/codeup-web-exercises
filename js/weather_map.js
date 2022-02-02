@@ -88,6 +88,29 @@ $(document).ready(function () {
 
     marker.on('dragend', onDragEnd);
 
+    var longLat;
+
+    $("#btnCurrent").click(function (e) {
+        e.preventDefault();
+        var address = $("#latitude").val();
+        longLat = marker.getLngLat();
+        $(".city").html(address);
+        console.log(address);
+
+        geocode(address, mapBoxKey).then(function (result) {
+            console.log(result);
+            lon = result[0];
+            lat = result[1];
+            getWeather(lon, lat); //populates card data on map travel
+            marker
+                .setLngLat([lon, lat]);
+            map.flyTo({
+                center: [lon, lat],
+                essential: true
+            })
+        });
+        getWeather();
+    });
 
 });
 

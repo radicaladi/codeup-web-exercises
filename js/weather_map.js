@@ -77,7 +77,19 @@ $(document).ready(function () {
         }) // done function end
     } //getWeather end
 
+    function onDragEnd() {
+        var lngLat = marker.getLngLat();
+        console.log(lngLat);
+        getWeather(lngLat.lat, lngLat.lng);
+        lon = lngLat.lng;
+        lat = lngLat.lat;
+        getWeather();
+    }
 
+    marker.on('dragend', onDragEnd);
+
+
+});
 
 // IDEA:
 // need to figure out how to clear this data when a new location is clicked.

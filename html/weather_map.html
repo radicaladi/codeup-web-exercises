@@ -43,10 +43,43 @@
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
 
+
 <div class="aether">
     <header class="container mb-2">
         <h1>Weather near me, <span class="city"></span></h1>
     </header>
+    <nav class="row align-items-center py-2">
+        <div class="input-group col-sm">
+            <span class="input-group-text" id="basic-addon1">Lat</span>
+            <input type="text"
+                   class="form-control"
+                   inputmode="numeric"
+                   id="latitude"
+                   placeholder="latitude"
+                   aria-label="latitude"
+                   aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group col-sm">
+            <span class="input-group-text" id="basic-addon1">Lon</span>
+            <input type="text"
+                   class="form-control"
+                   inputmode="numeric"
+                   id="longitude"
+                   placeholder="longitude"
+                   aria-label="longitude"
+                   aria-describedby="basic-addon1">
+        </div>
+        <div class="row btnRow">
+            <div class="col-auto">
+                <button id="btnGet" type="button" class="btn btn-primary mb-3">
+                    Get Weather
+                </button>
+                <button id="btnCurrent" type="button" class="btn btn-primary mb-3">
+                    Use Current Location
+                </button>
+            </div>
+        </div>
+    </nav>
     <main class="container">
         <div class="card-group mb-2">
             <!-- cards for weather -->

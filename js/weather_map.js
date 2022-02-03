@@ -30,9 +30,7 @@ $(document).ready(function () {
 
     getWeather();
 
-    $("#btnGet").click(function () {
-        getWeather($('#latitude').val(), $('#longitude').val());
-    })
+
 
 //immediate event listener will populate weather cards for location input to form fields upon button submit.
 //     document.getElementById('btnGet').addEventListener('click', function () {
@@ -77,6 +75,10 @@ $(document).ready(function () {
         }) // done function end
     } //getWeather end
 
+    $("#btnGet").click(function () {
+        getWeather($('#latitude').val(), $('#longitude').val());
+    })
+
     function onDragEnd() {
         var lngLat = marker.getLngLat();
         console.log(lngLat);
@@ -112,10 +114,19 @@ $(document).ready(function () {
         getWeather();
     });
 
+    function add_marker(event) {
+        let coordinates = event.lngLat;
+        console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);
+        marker.setLngLat(coordinates).addTo(map);
+        map.flyTo({center: [coordinates.lng, coordinates.lat], zoom: 11});
+        getWeather(coordinates.lat, coordinates.lng);
+    }
+
+    map.on('dblclick', add_marker);
+
 });
 
-// IDEA:
-// need to figure out how to clear this data when a new location is clicked.
+// ISSUES:
+// #1 : NEED TO CLEAR INPUTS WHEN MAKING OTHER QUERIES
         // $('#city').html("");  <----- this bit of code can clear span data in certain cases.
-
-// test functionality of creating functions for the map and nesting those function into the click event function
+// #2 : COULD USE STYLING ON PAGE IF TIME PERMITS

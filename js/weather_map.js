@@ -1,5 +1,3 @@
-// test location weather: -110.99, 32.32
-
 "use strict"
 $(document).ready(function () {
 
@@ -48,7 +46,10 @@ $(document).ready(function () {
         }).done(function (data) {
             console.log(data);
             // let city = data.city.name;
+            $(".card-group").html("");
+            $(".city").html("");
             $(".city").append(`${data.city.name}`); // prints city name to page in html span.
+            console.log(data);
 
             // loops through array data by iterations of 8 to get 5 arrays(days) back
             for (let i = 0; i < data.list.length; i += 8) {
@@ -76,7 +77,15 @@ $(document).ready(function () {
     } //getWeather end
 
     $("#btnGet").click(function () {
-        getWeather($('#latitude').val(), $('#longitude').val());
+        let nrt = $('#latitude').val();
+        let est = $('#longitude').val();
+        getWeather(nrt, est);
+        marker
+            .setLngLat([est, nrt]);
+        map.flyTo({
+            center: [est, nrt],
+            essential: true
+        })
     })
 
     function onDragEnd() {
@@ -96,22 +105,33 @@ $(document).ready(function () {
         e.preventDefault();
         var address = $("#latitude").val();
         longLat = marker.getLngLat();
-        $(".city").html(address);
+        // $(".city").html("");
+        // $(".city").html(address);
         console.log(address);
 
         geocode(address, mapBoxKey).then(function (result) {
-            console.log(result);
-            lon = result[0];
-            lat = result[1];
-            getWeather(lon, lat); //populates card data on map travel
+            // console.log(result);
+            // lon = result[0];
+            // lat = result[1];
+            // getWeather(lon, lat); //populates card data on map travel
+            // marker
+            //     .setLngLat([lon, lat]);
+            // map.flyTo({
+            //     center: [lon, lat],
+            //     essential: true
+            // })
+            // $(".city").html(address);
+            let nrt = result[1];
+            let est = result[0];
+            getWeather(nrt, est);
             marker
-                .setLngLat([lon, lat]);
+                .setLngLat([est, nrt]);
             map.flyTo({
-                center: [lon, lat],
+                center: [est, nrt],
                 essential: true
             })
         });
-        getWeather();
+        // getWeather();
     });
 
     function add_marker(event) {

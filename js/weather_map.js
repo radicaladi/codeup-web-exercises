@@ -1,11 +1,9 @@
 "use strict"
 $(document).ready(function () {
 
-    // default setting location
     let lat = 29.42;
     let lon = -98.49;
 
-    // map population with settings
     mapboxgl.accessToken = mapBoxKey;
     const map = new mapboxgl.Map({
         container: 'map',
@@ -14,7 +12,6 @@ $(document).ready(function () {
         center: [lon, lat]
     });
 
-    // gives geocode search bar in map
     map.addControl(
         new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
@@ -22,7 +19,6 @@ $(document).ready(function () {
         })
     );
 
-    // adds markers to map
     let marker = new mapboxgl.Marker({
         draggable: true
     })
@@ -30,18 +26,6 @@ $(document).ready(function () {
         .setLngLat([lon, lat])
         .addTo(map);
 
-    getWeather();
-
-
-
-//immediate event listener will populate weather cards for location input to form fields upon button submit.
-//     document.getElementById('btnGet').addEventListener('click', function () {
-//         getWeather(document.getElementById('latitude').value, document.getElementById('longitude').value);
-//     });
-
-// *** OPEN WEATHER SECTION ***
-
-    // ajax query to openWeatherMap and function for displaying weather card data
     function getWeather(lat, lng) {
         $.get("https://api.openweathermap.org/data/2.5/forecast", {
             APPID: weatherKey,
@@ -50,19 +34,18 @@ $(document).ready(function () {
             units: "imperial"
         }).done(function (data) {
             console.log(data);
-            // let city = data.city.name;
-            $(".card-group").html("");
-            $(".city").html("");
-            $(".city").append(`${data.city.name}`); // prints city name to page in html span.
+            let cards = $(".card-group");
+            let city = $(".city");
+            cards.html("");
+            city.html("");
+            city.append(`${data.city.name}`);
             console.log(data);
 
-            // loops through array data by iterations of 8 to get 5 arrays(days) back
             for (let i = 0; i < data.list.length; i += 8) {
                 console.log(data.list[i]);
-                let date = new Date((data.list[i].dt) * 1000).toDateString(); // makes date readable
+                let date = new Date((data.list[i].dt) * 1000).toDateString();
 
-                // creates boostrap card each iteration and adds readable data
-                $(".card-group").append(`
+                cards.append(`
                         <div class="card">
                             <div class="card-header text-center bg-secondary">${date}</div>
                             <div class="card-body text-center">
@@ -75,13 +58,11 @@ $(document).ready(function () {
                                 <li class="list-group-item">Wind: ${data.list[i].wind.speed} mph</li>
                                 <li class="list-group-item">Pressure: ${data.list[i].main.pressure} hPa</li>
                             </ul>
-                        </div>
-                `) // append end
-            } // loop end
-        }) // done function end
-    } //getWeather end
+                        </div>`)
+            }
+        })
+    }
 
-    // get location by coordinates input, travels map to location, adds marker, and displays weather data
     $("#btnGet").click(function () {
         let nrt = $('#latitude').val();
         let est = $('#longitude').val();
@@ -90,11 +71,11 @@ $(document).ready(function () {
             .setLngLat([est, nrt]);
         map.flyTo({
             center: [est, nrt],
-            essential: true
+            essential: true,
+            zoom: 11
         })
     })
 
-    // gets location when marker is dragged to point, adds marker, and displays weather data
     function onDragEnd() {
         var lngLat = marker.getLngLat();
         console.log(lngLat);
@@ -106,29 +87,15 @@ $(document).ready(function () {
 
     marker.on('dragend', onDragEnd);
 
-    // gets location by name input, travels map there, adds marker, and displays weather data
     var longLat;
 
     $("#btnName").click(function (e) {
         e.preventDefault();
         var address = $("#name").val();
         longLat = marker.getLngLat();
-        // $(".city").html("");
-        // $(".city").html(address);
         console.log(address);
 
         geocode(address, mapBoxKey).then(function (result) {
-            // console.log(result);
-            // lon = result[0];
-            // lat = result[1];
-            // getWeather(lon, lat); //populates card data on map travel
-            // marker
-            //     .setLngLat([lon, lat]);
-            // map.flyTo({
-            //     center: [lon, lat],
-            //     essential: true
-            // })
-            // $(".city").html(address);
             let nrt = result[1];
             let est = result[0];
             getWeather(nrt, est);
@@ -136,13 +103,12 @@ $(document).ready(function () {
                 .setLngLat([est, nrt]);
             map.flyTo({
                 center: [est, nrt],
-                essential: true
+                essential: true,
+                zoom: 11
             })
         });
-        // getWeather();
     });
 
-    // gets location with a double click on map, adds marker, and displays weather data
     function add_marker(event) {
         let coordinates = event.lngLat;
         console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);

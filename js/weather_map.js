@@ -109,9 +109,9 @@ $(document).ready(function () {
     // gets location by name input, travels map there, adds marker, and displays weather data
     var longLat;
 
-    $("#btnCurrent").click(function (e) {
+    $("#btnName").click(function (e) {
         e.preventDefault();
-        var address = $("#latitude").val();
+        var address = $("#name").val();
         longLat = marker.getLngLat();
         // $(".city").html("");
         // $(".city").html(address);

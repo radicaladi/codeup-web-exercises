@@ -1,9 +1,11 @@
 "use strict"
 $(document).ready(function () {
 
+    // default setting location
     let lat = 29.42;
     let lon = -98.49;
 
+    // map population with settings
     mapboxgl.accessToken = mapBoxKey;
     const map = new mapboxgl.Map({
         container: 'map',
@@ -12,6 +14,7 @@ $(document).ready(function () {
         center: [lon, lat]
     });
 
+    // gives geocode search bar in map
     map.addControl(
         new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
@@ -19,6 +22,7 @@ $(document).ready(function () {
         })
     );
 
+    // adds markers to map
     let marker = new mapboxgl.Marker({
         draggable: true
     })
@@ -37,6 +41,7 @@ $(document).ready(function () {
 
 // *** OPEN WEATHER SECTION ***
 
+    // ajax query to openWeatherMap and function for displaying weather card data
     function getWeather(lat, lng) {
         $.get("https://api.openweathermap.org/data/2.5/forecast", {
             APPID: weatherKey,
@@ -76,6 +81,7 @@ $(document).ready(function () {
         }) // done function end
     } //getWeather end
 
+    // get location by coordinates input, travels map to location, adds marker, and displays weather data
     $("#btnGet").click(function () {
         let nrt = $('#latitude').val();
         let est = $('#longitude').val();
@@ -88,6 +94,7 @@ $(document).ready(function () {
         })
     })
 
+    // gets location when marker is dragged to point, adds marker, and displays weather data
     function onDragEnd() {
         var lngLat = marker.getLngLat();
         console.log(lngLat);
@@ -99,6 +106,7 @@ $(document).ready(function () {
 
     marker.on('dragend', onDragEnd);
 
+    // gets location by name input, travels map there, adds marker, and displays weather data
     var longLat;
 
     $("#btnCurrent").click(function (e) {
@@ -134,6 +142,7 @@ $(document).ready(function () {
         // getWeather();
     });
 
+    // gets location with a double click on map, adds marker, and displays weather data
     function add_marker(event) {
         let coordinates = event.lngLat;
         console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);
@@ -145,8 +154,3 @@ $(document).ready(function () {
     map.on('dblclick', add_marker);
 
 });
-
-// ISSUES:
-// #1 : NEED TO CLEAR INPUTS WHEN MAKING OTHER QUERIES
-        // $('#city').html("");  <----- this bit of code can clear span data in certain cases.
-// #2 : COULD USE STYLING ON PAGE IF TIME PERMITS

@@ -69,15 +69,15 @@ let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-users.forEach(function(user) {
-    return emails.push(user.email);
-});
+// users.forEach(function(user) {
+//     return emails.push(user.email);
+// });
 //as an arrow function
 users.forEach( user => {return emails.push(user.email)});
 
-users.forEach(function(user) {
-    return names.push(user.name);
-});
+// users.forEach(function(user) {
+//     return names.push(user.name);
+// });
 //as an arrow function
 users.forEach( user => {return names.push(user.name)});
 
@@ -90,11 +90,13 @@ users.forEach(function(user) {
     // const name = user.name;
     // const email = user.email;
     // const languages = user.languages;
+
     const {name, email, languages} = user;
 
     // TODO: rewrite the assignment below to use template strings
     // developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
-    developers.push(`${name}"s email is, ${email} ${name} knows ${languages.join(', ')}`);
+
+    developers.push(`${name}"s email is, ${email}. ${name} knows ${languages.join(', ')}`);
 
 });
 console.log(developers)
@@ -103,9 +105,12 @@ console.log(developers)
 let list = '<ul>';
 
 // TODO: rewrite the following loop to use a for..of loop
-developers.forEach(function (developer) {
-
+// developers.forEach(function (developer)
+for (const developer of developers) {
     // TODO: rewrite the assignment below to use template strings
     list += '<li>' + developer + '</li>';
-});
+}
+
 list += '</ul>';
+
+console.log(list)

@@ -75,11 +75,26 @@ console.log(`average years of employee experience is, ${avgExp}.`);
 console.log("//////////")
 
 // use .reduce to get the longest email from the list of users
+    // old way:
+    // function findLongestEmail(array) {
+    //     var longestEmail = "";
+    //     array.forEach(function(email) {
+    //         if(email.length > longestEmail.length) {
+    //             longestEmail = email;
+    //         }
+    //     });
+    //     return longestEmail;
+    // }
+    //
+    // console.log(findLongestEmail(emCollection));
+    // console.log("//////////");
 
-let longestEm = emCollection.reduce((previousValue, currentValue) => {
-    if (previousValue.length > currentValue.length) {
-        return previousValue;
-    }
-    return currentValue;
-});
-console.log(longestEm)
+        // new way:
+        let longestEm = emCollection.reduce((previousValue, currentValue) => {
+            if (previousValue.length > currentValue.length) {
+                return previousValue;
+            }
+            return currentValue;
+        });
+        console.log(longestEm);
+        console.log("//////////");

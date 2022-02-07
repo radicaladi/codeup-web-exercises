@@ -101,36 +101,70 @@ console.log("//////////")
 
 // use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
     // old way:
-    let namesCol = [];
-    users.forEach(function (user) {
-        namesCol.push(user.name);
-    });
-    console.log(namesCol);
-
-    let newNCol = namesCol.join(", ");
-    console.log(newNCol);
-    console.log("//////////");
-
-    // new way 1 (map first):
-    // let names = users.map(user => user.name);
-    // console.log(names);
+    // let namesCol = [];
+    // users.forEach(function (user) {
+    //     namesCol.push(user.name);
+    // });
+    // console.log(namesCol);
     //
-    // let uNames = names.reduce((previousValue, currentValue, index) => {
-    //     if ( index === 0 ) {
-    //         return currentValue;
-    //     }
-    //     return previousValue + ', ' + currentValue;
-    // }, '');
-    //
-    // console.log(uNames);
+    // let newNCol = namesCol.join(", ");
+    // console.log(newNCol);
     // console.log("//////////");
 
-    // new way 2 (w/o mapping):
-    let usrNames = users.reduce((previousValue, currentValue, index) => {
-        if (index === 0) {
-            return currentValue.name;
-        }
-        return previousValue + ', ' + currentValue.name;
-    }, '');
+        // new way 1 (map first):
+        // let names = users.map(user => user.name);
+        // console.log(names);
+        //
+        // let uNames = names.reduce((previousValue, currentValue, index) => {
+        //     if ( index === 0 ) {
+        //         return currentValue;
+        //     }
+        //     return previousValue + ', ' + currentValue;
+        // }, '');
+        //
+        // console.log(uNames);
+        // console.log("//////////");
 
-    console.log(usrNames);
+            // new way 2 (w/o mapping):
+            let usrNames = users.reduce((previousValue, currentValue, index) => {
+                if (index === 0) {
+                    return currentValue.name;
+                }
+                return previousValue + ', ' + currentValue.name;
+            }, '');
+
+            console.log(usrNames);
+            console.log("//////////");
+
+// BONUS
+// use .reduce to get the unique list of languages from the list of users.
+
+// let langMap = users.map(user => user.languages);
+// let uniqLang = langMap.reduce((previousValue, currentValue, currentIndex) => {
+//     for (let i = 0; i < currentValue.length; i++){
+//         if (currentIndex=== 0) {
+//             return currentValue;
+//         } else if (!previousValue.includes(currentValue[i])) {
+//             previousValue.push(currentValue[i]);
+//         }
+//     }
+//     return previousValue;
+// }, [])
+//
+// console.log("stop2");
+// console.log(langMap);
+// console.log("/////");
+// console.log(`unique languages are: ${uniqLang}`);
+// console.log("stop");
+
+    let uniqlo = users.reduce((previous, current) => {
+        let currentLang = current.languages;
+        for (let i = 0; i < currentLang.length; i++){
+            if (!previous.includes(currentLang[i])) {
+                previous.push(currentLang[i]);
+            }
+        }
+        return previous;
+    }, []);
+
+    console.log(`These are the unique languages: ${uniqlo}.`);

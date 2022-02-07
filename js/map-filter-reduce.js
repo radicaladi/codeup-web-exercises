@@ -37,6 +37,18 @@ const users = [
 ];
 
 // use .filter to create an array of user objects where each user has at least 3 languages in the languages array
+    // old way:
+    // let triLing = [];
+    // users.forEach(function (user) {
+    //     if (user.languages.length >= "3"){
+    //         triLing.push(user);
+    //     }
+    // })
+    // console.log(triLing)
+
+        // new way:
+        let triLingual = users.filter(user => user.languages.length >= "3");
+        console.log(triLingual);
 
 // use .map to create an array of strings where each element is a user's email address
     // old way:

@@ -100,15 +100,26 @@ console.log("//////////")
         console.log("//////////");
 
 // use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
-let names = users.map(user => user.name);
-console.log(names);
+    // new way 1 (map first):
+    let names = users.map(user => user.name);
+    console.log(names);
 
-let uNames = names.reduce((previousValue, currentValue, index) => {
-    if ( index === 0 ) {
-        return currentValue;
-    }
-    return previousValue + ', ' + currentValue;
-}, '')
+    let uNames = names.reduce((previousValue, currentValue, index) => {
+        if ( index === 0 ) {
+            return currentValue;
+        }
+        return previousValue + ', ' + currentValue;
+    }, '');
 
-console.log(uNames);
-console.log("//////////");
+    console.log(uNames);
+    console.log("//////////");
+
+    // new way 2 (w/o mapping):
+    let usrNames = users.reduce((previousValue, currentValue, index) => {
+        if (index === 0) {
+            return currentValue.name;
+        }
+        return previousValue + ', ' + currentValue.name;
+    }, '');
+
+    console.log(usrNames);

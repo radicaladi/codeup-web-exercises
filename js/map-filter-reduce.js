@@ -98,3 +98,17 @@ console.log("//////////")
         });
         console.log(longestEm);
         console.log("//////////");
+
+// use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
+let names = users.map(user => user.name);
+console.log(names);
+
+let uNames = names.reduce((previousValue, currentValue, index) => {
+    if ( index === 0 ) {
+        return currentValue;
+    }
+    return previousValue + ', ' + currentValue;
+}, '')
+
+console.log(uNames);
+console.log("//////////");

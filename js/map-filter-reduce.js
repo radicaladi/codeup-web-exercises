@@ -49,6 +49,7 @@ const users = [
         // new way:
         let triLingual = users.filter(user => user.languages.length >= "3");
         console.log(triLingual);
+        console.log("//////////");
 
 // use .map to create an array of strings where each element is a user's email address
     // old way:
@@ -62,3 +63,12 @@ const users = [
         // new way:
         let emCollection = users.map(user => user.email);
         console.log(emCollection);
+        console.log("//////////");
+
+// use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
+let coExp = users.reduce((total, user) => {
+    return total + user.yearsOfExperience;
+}, 0);
+let avgExp = coExp / users.length;
+console.log(`total years of employee experiences is, ${coExp}.`);
+console.log(`average years of employee experience is, ${avgExp}.`);

@@ -65,10 +65,21 @@ const users = [
         console.log(emCollection);
         console.log("//////////");
 
-// use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
+// use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average
 let coExp = users.reduce((total, user) => {
     return total + user.yearsOfExperience;
 }, 0);
 let avgExp = coExp / users.length;
 console.log(`total years of employee experiences is, ${coExp}.`);
 console.log(`average years of employee experience is, ${avgExp}.`);
+console.log("//////////")
+
+// use .reduce to get the longest email from the list of users
+
+let longestEm = emCollection.reduce((previousValue, currentValue) => {
+    if (previousValue.length > currentValue.length) {
+        return previousValue;
+    }
+    return currentValue;
+});
+console.log(longestEm)

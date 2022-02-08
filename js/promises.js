@@ -6,22 +6,23 @@
 // create a function that takes a github username ✅
 // that returns the date of the last commit
 
-function randomUser (input) {
+function randomUser(input) {
     console.log(input);
-fetch(`https://api.github.com/users/${input}`, {headers: {'Authorization': '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'}})
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        console.log("last commit time as follows, " + data.updated_at);
-        return data.updated_at;
-    })
-    .catch(error => console.log(error));
+    fetch(`https://api.github.com/users/${input}`, {headers: {'Authorization': '_j8LaJBe2hrqQJAzVA3btdyq4eXTQdB29jSJt'}})
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            console.log("last commit time as follows, " + data.updated_at);
+            return data.updated_at;
+        })
+        .catch(error => console.log(error));
 }
+
 randomUser("radicaladi");
 
 //
 // function wait() {
-//     return fetch('https://api.github.com/users/radicaladi', {headers: {'Authorization': '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'}})
+//     return fetch('https://api.github.com/users/radicaladi', {headers: {'Authorization': '_j8LaJBe2hrqQJAzVA3btdyq4eXTQdB29jSJt'}})
 //
 // }
 //
@@ -43,3 +44,24 @@ randomUser("radicaladi");
 // // if resolved, will log "Promise resolved!" and "Here is your data: ..."
 // wade.catch(message => console.log('Promise rejected!', message));
 // // if rejected, will log "Promise rejected!" and "Network Connection Error!"
+
+
+
+//********************** code for random github user generator
+//
+// function randomUser(input) {
+//     console.log(input);
+//     fetch(grgerbdb, agadfadfg).then(user => user.json()).then(grabbeduser => {
+//         console.log(grabbeduser)
+//         fetch(`https://api.github.com/users/${grabbeduser}`, {headers: {'Authorization': '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'}})
+//             .then(response => response.json())
+//             .then(data => {
+//                 console.log(data);
+//                 console.log("last commit time as follows, " + data.updated_at);
+//                 return data.updated_at;
+//             })
+//             .catch(error => console.log(error));
+//     })
+//
+// }
+// console.log(randomUser("geraldmontero"));

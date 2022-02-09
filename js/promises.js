@@ -8,34 +8,21 @@
 
 // function randomUser(input) {
 //     console.log(input);
-//     fetch(`https://api.github.com/users/${input}`, {headers: {'Authorization': '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'}})
+//     fetch(`https://api.github.com/users/${input}/events/public`, {headers: {'Authorization': gKey}})
 //         .then(response => response.json())
-//         .then(data => {
-//             console.log(data);
-//             console.log("last commit time as follows, " + data.updated_at);
-//             return data.updated_at;
+//         .then(responseObj => {
+//             console.log(responseObj);
+//             console.log("last commit time as follows, " + responseObj[0].created_at);
+//             return data.created_at;
 //         })
 //         .catch(error => console.log(error));
 // }
 //
 // randomUser("radicaladi");
 
-//
-// function wait() {
-//     return fetch('https://api.github.com/users/radicaladi', {headers: {'Authorization': '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'}})
-//
-// }
-//
-function wait(input) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (Math.random() > 0.1) {
-                resolve('Here is your data: ...');
-            } else {
-                reject('Network Connection Error!');
-            }
-        }, input);
-    });
+
+function wait(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
 wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
